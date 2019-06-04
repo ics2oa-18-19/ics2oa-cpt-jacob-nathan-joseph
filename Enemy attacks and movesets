@@ -1,0 +1,16 @@
+#Herobrine movesets
+import random
+for x in range(1):
+  Herobrine_move = random.randint(1,4)
+
+
+
+Herobrine_electrocute = 25
+Herorbrine_mine = 15
+Herobrine_charge = 15
+Herobrine_smite = 20
+
+Player_health = 100
+Herobrine_health = 100
+
+if Herobrine_move =
