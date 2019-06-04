@@ -1,0 +1,15 @@
+num_of_scooby_snacks = 5
+
+health = 50
+
+scooby_snacks = 100
+use_scooby_snack = input("use scooby snack Y or N:")
+
+if use_scooby_snack == 'y':
+    health = 100
+    print("restored to full health")
+    num_of_scooby_snacks -= 1
+    print (f"you have {num_of_scooby_snacks} scooby snacks left")
+else:
+    print (f"you are at {health} health")
+
