@@ -1,63 +1,73 @@
-#Herobrine movesets
 import random
-for x in range(1):
-  Herobrine_move = random.randint(1,4)
 
-
-
+n = 0
+player_health = 100
+herobrine_health = 100
 Herobrine_electrocute = 25
 Herorbrine_mine = 15
 Herobrine_charge = 15
 Herobrine_smite = 20
 
-Player_health = 100
-Herobrine_health = 100
 
-if Herobrine_move =
+turn = random.randint(1,2) 
+if turn == 1:
+    player_turn = True
+    herobrine_turn = False
+    print("player")
+else:
+    player_turn = False
+    herobrine_turn = True
+    print("Computer turn")
 
-import arcade
-
-
-WIDTH = 640
-HEIGHT = 480
-
-stamina = 100
-health = 100
-def update(delta_time):
-    pass
-
-
-def on_draw():
-    arcade.start_render()
-    arcade.draw_xywh_rectangle_filled(10, 65, stamina * 2, 50, arcade.color.DIM_GRAY)
-    arcade.draw_xywh_rectangle_filled(10, 10, health * 2, 50, arcade.color.RED_DEVIL)
-
-
-def on_key_press(key, modifiers):
-    pass
-
-
-def on_key_release(key, modifiers):
-    pass
-
-
-def on_mouse_press(x, y, button, modifiers):
-    pass
-
-
-def setup():
-    arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
-    arcade.set_background_color(arcade.color.WHITE)
-    arcade.schedule(update, 1/60)
-
-    # Override arcade window methods
-    window = arcade.get_window()
-    window.on_draw = on_draw
-    window.on_key_press = on_key_press
-    window.on_key_release = on_key_release
-
-    arcade.run()
-
-
-if __name__ == '__main__':
-    setup()
+while n == 0:
+    if herobrine_turn:
+        for x in range(1):
+                Herobrine_move = random.randint(1,4)
+                if Herobrine_move == 1:
+                    print("Herobrine used electrocute, you took 25 damage")
+                    player_health -= 25
+                    print(f"you now have {player_health} health")
+                    herobrine == not herobrine_turn
+                elif Herobrine_move == 2:
+                    print("Herobrine used mine, you took 15 damage")
+                    player_health -= 15
+                    print(f"you now have {player_health} health")
+                    herobrine == not herobrine_turn
+                elif Herobrine_move == 3:
+                    print("Herobrine used charge, you took 15 damage")
+                    player_health -= 15
+                    print(f"you now have {player_health} health")
+                    herobrine == not herobrine_turn
+                elif Herobrine_move == 4:
+                    print("Herobrine used smite, you took 20 damage")
+                    player_health -= 20
+                    print(f"you now have {player_health} health")
+                    herobrine == not herobrine_turn  
+    else:
+        while player_health >= 0:
+            move = input("what move do you want to use?: ")
+        if move == "punch":
+            print("you used punch")
+            herobrine_health -= 20
+            print(f"herobrine now has {herobrine_health} health")
+            player_turn == not player_turn
+        elif move == "kick":
+            print("you used kick")
+            herobrine_health -= 25
+            print(f"herobrine now has {herobrine_health} health")
+            player_turn == not player_turn
+        elif move == "lick":
+            print("you used lick")
+            herobrine_health -= 15
+            print(f"herobrine now has {herobrine_health} health")
+            player_turn == not player_turn
+        elif move == "grab":
+            print("you used grab")
+            herobrine_health -= 15
+            print(f"herobrine now has {herobrine_health} health")
+            player_turn == not player_turn
+        else:
+            print("not a valid move")
+            pass
+    
+  
