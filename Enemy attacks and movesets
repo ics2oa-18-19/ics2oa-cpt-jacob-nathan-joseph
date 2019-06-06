@@ -1,4 +1,4 @@
-#infinite loop????!!!
+#does not cycle!!!
 
 import random
 
@@ -21,7 +21,7 @@ else:
     herobrine_turn = True
     print("Computer turn")
 
-while player_health > 0 or herobrine_health > 0:
+while player_health > 0 :
     if herobrine_turn:
         for x in range(1):
                 Herobrine_move = random.randint(1,4)
@@ -29,47 +29,42 @@ while player_health > 0 or herobrine_health > 0:
                     print("Herobrine used electrocute, you took 25 damage")
                     player_health -= 25
                     print(f"you now have {player_health} health")
-                    herobrine = not herobrine_turn
                 elif Herobrine_move == 2:
                     print("Herobrine used mine, you took 15 damage")
                     player_health -= 15
                     print(f"you now have {player_health} health")
-                    herobrine = not herobrine_turn
                 elif Herobrine_move == 3:
                     print("Herobrine used charge, you took 15 damage")
                     player_health -= 15
                     print(f"you now have {player_health} health")
-                    herobrine = not herobrine_turn
                 elif Herobrine_move == 4:
                     print("Herobrine used smite, you took 20 damage")
                     player_health -= 20
                     print(f"you now have {player_health} health")
-                    herobrine = not herobrine_turn  
+                      
     else:
         while player_health >= 0:
             move = input("what move do you want to use?: ")
-        if move == "punch":
-            print("you used punch")
-            herobrine_health -= 20
-            print(f"herobrine now has {herobrine_health} health")
-            player_turn = not player_turn
-        elif move == "kick":
-            print("you used kick")
-            herobrine_health -= 25
-            print(f"herobrine now has {herobrine_health} health")
-            player_turn = not player_turn
-        elif move == "lick":
-            print("you used lick")
-            herobrine_health -= 15
-            print(f"herobrine now has {herobrine_health} health")
-            player_turn = not player_turn
-        elif move == "grab":
-            print("you used grab")
-            herobrine_health -= 15
-            print(f"herobrine now has {herobrine_health} health")
-            player_turn = not player_turn
-        else:
-            print("not a valid move")
-            pass
+            if move == "punch":
+                print("you used punch")
+                herobrine_health -= 20
+                print(f"herobrine now has {herobrine_health} health")
+            elif move == "kick":
+                print("you used kick")
+                herobrine_health -= 25
+                print(f"herobrine now has {herobrine_health} health")
+            elif move == "lick":
+                print("you used lick")
+                herobrine_health -= 15
+                print(f"herobrine now has {herobrine_health} health")
+            elif move == "grab":
+                print("you used grab")
+                herobrine_health -= 15
+                print(f"herobrine now has {herobrine_health} health")
+            else:
+                print("not a valid move")
+                pass
     
+    herobrine = not herobrine_turn 
+    player_turn = not player_turn 
   
