@@ -43,26 +43,47 @@ while player_health > 0 and herobrine_health > 0:
             if move == "punch":
                 print("you used punch")
                 herobrine_health -= 20
+                fifteen_percent_miss = random.randint(1,100)
+                if fifteen_percent_miss <= 15:
+                    herobrine_health += 20
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"herobrine now has {herobrine_health} health")
             elif move == "kick":
                 print("you used kick")
                 herobrine_health -= 25
+                twenty_percent_miss = random.randint(1,5)
+                if twenty_percent_miss == 1:
+                    herobrine_health += 25
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"herobrine now has {herobrine_health} health")
             elif move == "lick":
                 print("you used lick")
                 herobrine_health -= 15
+                ten_percent_miss = random.randint(1,10)
+                if ten_percent_miss == 1:
+                    herobrine_health += 15
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"herobrine now has {herobrine_health} health")
             elif move == "grab":
                 print("you used grab")
                 herobrine_health -= 15
+                ten_percent_miss = random.randint(1,10)
+                if ten_percent_miss == 1:
+                    herobrine_health += 15
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"herobrine now has {herobrine_health} health")
             else:
                 print("not a valid move")
                 pass
-            n += 1
-        
-
-        
+            n += 1        
 -----------------------------------------------------------------
 peter_sans_health = 100
 peter_sans_fart = 25
