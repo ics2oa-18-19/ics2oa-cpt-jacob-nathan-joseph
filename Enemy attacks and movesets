@@ -1,15 +1,21 @@
 import random
 
-
-x = 0
 n = 0
 player_health = 100
 herobrine_health = 100
 Herobrine_electrocute = 25
-Herorbrine_mine = 15
+Herorbrine_teleportsbehindyou = 15
 Herobrine_charge = 15
 Herobrine_smite = 20
 
+
+turn = random.randint(1,2) 
+if turn == 1:
+    n += 1
+    print("You go first")
+else:
+    print("Herobrine goes first")
+    
 
 while player_health > 0 and herobrine_health > 0:
     if n % 2 == 0:
@@ -31,26 +37,30 @@ while player_health > 0 and herobrine_health > 0:
                 print("Herobrine used smite, you took 20 damage")
                 player_health -= 20
                 print(f"you now have {player_health} health")
-        move = input("what move do you want to use?: ")
-        if move == "punch":
-            print("you used punch")
-            herobrine_health -= 20
-            print(f"herobrine now has {herobrine_health} health")
-        elif move == "kick":
-            print("you used kick")
-            herobrine_health -= 25
-            print(f"herobrine now has {herobrine_health} health")
-        elif move == "lick":
-            print("you used lick")
-            herobrine_health -= 15
-            print(f"herobrine now has {herobrine_health} health")
-        elif move == "grab":
-            print("you used grab")
-            herobrine_health -= 15
-            print(f"herobrine now has {herobrine_health} health")
-        else:
-            print("not a valid move")
-            pass
+            n += 1
+    if n % 2 != 0: 
+            move = input("what move do you want to use?: ")
+            if move == "punch":
+                print("you used punch")
+                herobrine_health -= 20
+                print(f"herobrine now has {herobrine_health} health")
+            elif move == "kick":
+                print("you used kick")
+                herobrine_health -= 25
+                print(f"herobrine now has {herobrine_health} health")
+            elif move == "lick":
+                print("you used lick")
+                herobrine_health -= 15
+                print(f"herobrine now has {herobrine_health} health")
+            elif move == "grab":
+                print("you used grab")
+                herobrine_health -= 15
+                print(f"herobrine now has {herobrine_health} health")
+            else:
+                print("not a valid move")
+                pass
+            n += 1
+        
 
         
 -----------------------------------------------------------------
