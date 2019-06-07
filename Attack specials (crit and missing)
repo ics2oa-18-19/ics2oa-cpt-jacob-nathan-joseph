@@ -1,0 +1,24 @@
+#crit chances
+
+import random
+
+attack = 25
+
+
+50_%_crit = random.randint(1,2)
+if 50_%_crit == 1:
+    attack += attack / 2
+else:
+    pass
+
+25_%_crit = random.randint(1,2,3,4)
+if 25_%_crit % == 0:
+    attack += attack / 2
+else:
+    pass
+
+10_%_crit = random.randint(1,2,3,4,5,6,7,8,9,10)
+if 10_%_crit == 1:
+    attack += attack/ 2
+else:
+    pass
