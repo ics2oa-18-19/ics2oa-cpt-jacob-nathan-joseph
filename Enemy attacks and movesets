@@ -1,8 +1,8 @@
-#does not cycle!!!
-
 import random
 
 
+x = 0
+n = 0
 player_health = 100
 herobrine_health = 100
 Herobrine_electrocute = 25
@@ -11,62 +11,48 @@ Herobrine_charge = 15
 Herobrine_smite = 20
 
 
-turn = random.randint(1,2) 
-if turn == 1:
-    player_turn = True
-    herobrine_turn = False
-    print("player")
-else:
-    player_turn = False
-    herobrine_turn = True
-    print("Computer turn")
-
-while player_health > 0 :
-    if herobrine_turn:
+while player_health > 0 and herobrine_health > 0:
+    if n % 2 == 0:
         for x in range(1):
-                Herobrine_move = random.randint(1,4)
-                if Herobrine_move == 1:
-                    print("Herobrine used electrocute, you took 25 damage")
-                    player_health -= 25
-                    print(f"you now have {player_health} health")
-                elif Herobrine_move == 2:
-                    print("Herobrine used mine, you took 15 damage")
-                    player_health -= 15
-                    print(f"you now have {player_health} health")
-                elif Herobrine_move == 3:
-                    print("Herobrine used charge, you took 15 damage")
-                    player_health -= 15
-                    print(f"you now have {player_health} health")
-                elif Herobrine_move == 4:
-                    print("Herobrine used smite, you took 20 damage")
-                    player_health -= 20
-                    print(f"you now have {player_health} health")
-                      
-    else:
-        while player_health >= 0:
-            move = input("what move do you want to use?: ")
-            if move == "punch":
-                print("you used punch")
-                herobrine_health -= 20
-                print(f"herobrine now has {herobrine_health} health")
-            elif move == "kick":
-                print("you used kick")
-                herobrine_health -= 25
-                print(f"herobrine now has {herobrine_health} health")
-            elif move == "lick":
-                print("you used lick")
-                herobrine_health -= 15
-                print(f"herobrine now has {herobrine_health} health")
-            elif move == "grab":
-                print("you used grab")
-                herobrine_health -= 15
-                print(f"herobrine now has {herobrine_health} health")
-            else:
-                print("not a valid move")
-                pass
-    
-    herobrine = not herobrine_turn 
-    player_turn = not player_turn 
+            Herobrine_move = random.randint(1,4)
+            if Herobrine_move == 1:
+                print("Herobrine used electrocute, you took 25 damage")
+                player_health -= 25
+                print(f"you now have {player_health} health")
+            elif Herobrine_move == 2:
+                print("Herobrine used mine, you took 15 damage")
+                player_health -= 15
+                print(f"you now have {player_health} health")
+            elif Herobrine_move == 3:
+                print("Herobrine used charge, you took 15 damage")
+                player_health -= 15
+                print(f"you now have {player_health} health")
+            elif Herobrine_move == 4:
+                print("Herobrine used smite, you took 20 damage")
+                player_health -= 20
+                print(f"you now have {player_health} health")
+        move = input("what move do you want to use?: ")
+        if move == "punch":
+            print("you used punch")
+            herobrine_health -= 20
+            print(f"herobrine now has {herobrine_health} health")
+        elif move == "kick":
+            print("you used kick")
+            herobrine_health -= 25
+            print(f"herobrine now has {herobrine_health} health")
+        elif move == "lick":
+            print("you used lick")
+            herobrine_health -= 15
+            print(f"herobrine now has {herobrine_health} health")
+        elif move == "grab":
+            print("you used grab")
+            herobrine_health -= 15
+            print(f"herobrine now has {herobrine_health} health")
+        else:
+            print("not a valid move")
+            pass
+
+        
 -----------------------------------------------------------------
 player_health = 100
 peter_sans_health = 100
@@ -76,15 +62,6 @@ peter_sans_yell = 15
 peter_sans_kamekameha = 40
 
 
-turn = random.randint(1,2) 
-if turn == 1:
-    player_turn = True
-    peter_sans_turn = False
-    print("player")
-else:
-    player_turn = False
-    peter_sans_turn = True
-    print("Computer turn")
 
 while player_health > 0 :
     if peter_sans_turn:
