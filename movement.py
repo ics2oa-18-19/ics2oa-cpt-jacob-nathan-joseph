@@ -1,18 +1,6 @@
-"""
-Sprites in arcade.
-Sprites are just game objects that interact with eachother.
-E.g., the player, enemies, lazer bolts, asteroids.
-Provided you have an image, rendering sprites is faster than drawing shapes.
-"""
 
 import os
 import arcade
-
-# Because my code is in a sub-folder, I need to tell python
-# to read in files relative to my code file.
-# You may not have to import os and insert the following two lines.
-# file_path = os.path.dirname(os.path.abspath(__file__))
-# os.chdir(file_path)
 
 WIDTH = 640
 HEIGHT = 480
@@ -46,8 +34,14 @@ def setup():
 
 def update(delta_time):
     global up_pressed, player_y
-    if up_pressed:
-        player_y += 5
+    if up_pressed == True:
+        player.center_y += 3
+    if down_pressed == True:
+        player.center_y -= 3
+    if left_pressed == True:
+        player.center_x -= 3
+    if right_pressed == True:
+        player.center_x += 3
 
        
 def on_draw():
@@ -61,11 +55,33 @@ def on_key_press(key, modifiers):
     if key == arcade.key.W:
         up_pressed = True
 
+    global down_pressed
+    if key == arcade.key.S:
+        down_pressed = True
+    global right_pressed
+    if key == arcade.key.D:
+        right_pressed = True
+    global left_pressed
+    if key == arcade.key.A:
+        left_pressed = True
+
 
 def on_key_release(key, modifiers):
     global up_pressed
     if key == arcade.key.W:
         up_pressed = False
+
+    global down_pressed
+    if key == arcade.key.S:
+        down_pressed = False
+        
+    global right_pressed
+    if key == arcade.key.D:
+        right_pressed = False
+
+    global left_pressed
+    if key == arcade.key.A:
+        left_pressed = False
 
 
 def on_mouse_press(x, y, button, modifiers):
