@@ -64,61 +64,64 @@ while player_health > 0 and herobrine_health > 0:
 
         
 -----------------------------------------------------------------
-player_health = 100
 peter_sans_health = 100
 peter_sans_fart = 25
 peter_sans_swing = 15
 peter_sans_yell = 15
 peter_sans_kamekameha = 40
 
+turn = random.randint(1,2) 
+if turn == 1:
+    n += 1
+    print("You go first")
+else:
+    print("Peter sans goes first")
+    
 
-
-while player_health > 0 :
-    if peter_sans_turn:
-        for x in range(1):
-                peter_sans_move = random.randint(1,4)
-                if peter_sans_move == 1:
-                    print("Peter Sans used fart, you took 25 damage over time")
-                    player_health -= 25
-                    print(f"you now have {player_health} health")
-                elif peter_sans_move == 2:
-                    print("Peter Sans used swing, you took 15 damage")
-                    player_health -= 15
-                    print(f"you now have {player_health} health")
-                elif Herobrine_move == 3:
-                    print("Peter Sans used yell, you took 15 damage")
-                    player_health -= 15
-                    print(f"you now have {player_health} health")
-                elif Herobrine_move == 4:
-                    print("Peter Sans used Kamekameha, you took 40 damage")
-                    player_health -= 40
-                    print(f"you now have {player_health} health")
-                      
-    else:
-        while player_health >= 0:
+while player_health > 0 and peter_sans_health > 0:
+    if n % 2 == 0:
+         for x in range(1):
+            peter_sans_move = random.randint(1,4)
+            if peter_sans_move == 1:
+                print("Peter Sans used fart, you took 25 damage over time")
+                player_health -= 25
+                print(f"you now have {player_health} health")
+            elif peter_sans_move == 2:
+                print("Peter Sans used swing, you took 15 damage")
+                player_health -= 15
+                print(f"you now have {player_health} health")
+            elif peter_sans_move == 3:
+                print("Peter Sans used yell, you took 15 damage")
+                player_health -= 15
+                print(f"you now have {player_health} health")
+            elif peter_sans_move == 4:
+                print("Peter Sans used Kamekameha, you took 40 damage")
+                player_health -= 40
+                print(f"you now have {player_health} health")
+            n += 1
+    if n % 2 != 0: 
             move = input("what move do you want to use?: ")
             if move == "punch":
                 print("you used punch")
                 peter_sans_health -= 20
-                print(f"Peter Sans now has {peter_sans_health} health")
+                print(f"Peter sans now has {peter_sans_health} health")
             elif move == "kick":
                 print("you used kick")
                 peter_sans_health -= 25
-                print(f"Peter Sans now has {peter_sans_health} health")
+                print(f"Peter sans now has {peter_sans_health} health")
             elif move == "lick":
                 print("you used lick")
                 peter_sans_health -= 15
-                print(f"Peter Sans now has {peter_sans_health} health")
+                print(f"Peter sans now has {peter_sans_health} health")
             elif move == "grab":
                 print("you used grab")
                 peter_sans_health -= 15
-                print(f"Peter Sans now has {peter_sans_health} health")
+                print(f"Peter sans now has {peter_sans_health} health")
             else:
                 print("not a valid move")
                 pass
-    
-    peter_sans = not peter_sans_turn 
-    player_turn = not player_turn
+            n += 1
+        
     
 ---------------------------------------------------------------------------------------
 player_health = 100
