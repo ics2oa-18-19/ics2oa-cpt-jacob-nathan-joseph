@@ -104,16 +104,11 @@ while player_health > 0 and herobrine_health > 0:
                 pass
             n += 1      
 -----------------------------------------------------------------
+import random
+
+n = 0
+player_health = 100
 peter_sans_health = 100
-
-
-turn = random.randint(1,2) 
-if turn == 1:
-    n += 1
-    print("You go first")
-else:
-    print("Peter sans goes first")
-    
 
 while player_health > 0 and peter_sans_health > 0:
     if n % 2 == 0:
@@ -141,38 +136,63 @@ while player_health > 0 and peter_sans_health > 0:
             if move == "punch":
                 print("you used punch")
                 peter_sans_health -= 20
+                ten_percent_crit = random.randint(1,10)
+                if ten_percent_crit == 1:
+                    peter_sans_health -= 40
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 fifteen_percent_miss = random.randint(1,100)
                 if fifteen_percent_miss <= 15:
                     peter_sans_health += 20
-                    print("Your attack missed!")
+                    print(" But your attack missed!")
                 else:
                     pass
                 print(f"Peter sans now has {peter_sans_health} health")
             elif move == "kick":
                 print("you used kick")
                 peter_sans_health -= 25
+                ten_percent_crit = random.randint(1,10)
+                if ten_percent_crit == 1:
+                    peter_sans_health -= 50
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 twenty_percent_miss = random.randint(1,5)
                 if twenty_percent_miss == 1:
                     peter_sans_health += 25
-                    print("Your attack missed!")
+                    print(" But your attack missed!")
                 else:
                     pass
                 print(f"Peter sans now has {peter_sans_health} health")
             elif move == "lick":
                 print("you used lick")
                 peter_sans_health -= 15
+                twenty_five_percent_crit = random.randint(1,4)
+                if twenty_five_percent_crit == 1:
+                    peter_sans_health -= 30
+                    print("your attack was a critical hit!")
+                else:
+                    pass
+                ten_percent_miss = random.randint(1,10)
                 if ten_percent_miss == 1:
                     peter_sans_health += 15
-                    print("Your attack missed!")
+                    print("But your attack missed!")
                 else:
                     pass
                 print(f"Peter sans now has {peter_sans_health} health")
             elif move == "grab":
                 print("you used grab")
                 peter_sans_health -= 15
+                twenty_five_percent_crit = random.randint(1,4)
+                if twenty_five_percent_crit == 1:
+                    peter_sans_health -= 30
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 if ten_percent_miss == 1:
                     peter_sans_health += 15
-                    print("Your attack missed!")
+                    print(" But your attack missed!")
                 else:
                     pass
                 print(f"Peter sans now has {peter_sans_health} health")
