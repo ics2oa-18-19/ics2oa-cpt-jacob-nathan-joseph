@@ -4,8 +4,6 @@ n = 0
 player_health = 100
 herobrine_health = 100
 
-
-
 turn = random.randint(1,2) 
 if turn == 1:
     n += 1
@@ -40,16 +38,28 @@ while player_health > 0 and herobrine_health > 0:
             if move == "punch":
                 print("you used punch")
                 herobrine_health -= 20
+                ten_percent_crit = random.randint(1,10)
+                if ten_percent_crit == 1:
+                    herobrine_health -= 40
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 fifteen_percent_miss = random.randint(1,100)
                 if fifteen_percent_miss <= 15:
                     herobrine_health += 20
-                    print("Your attack missed!")
+                    print(" But your attack missed!")
                 else:
                     pass
                 print(f"herobrine now has {herobrine_health} health")
             elif move == "kick":
                 print("you used kick")
                 herobrine_health -= 25
+                ten_percent_crit = random.randint(1,10)
+                if ten_percent_crit == 1:
+                    herobrine_health -= 50
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 twenty_percent_miss = random.randint(1,5)
                 if twenty_percent_miss == 1:
                     herobrine_health += 25
@@ -60,6 +70,12 @@ while player_health > 0 and herobrine_health > 0:
             elif move == "lick":
                 print("you used lick")
                 herobrine_health -= 15
+                twenty_five_percent_crit = random.randint(1,4)
+                if ten_percent_crit == 1:
+                    herobrine_health -= 30
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 ten_percent_miss = random.randint(1,10)
                 if ten_percent_miss == 1:
                     herobrine_health += 15
@@ -70,6 +86,12 @@ while player_health > 0 and herobrine_health > 0:
             elif move == "grab":
                 print("you used grab")
                 herobrine_health -= 15
+                twenty_five_percent_crit = random.randint(1,4)
+                if ten_percent_crit == 1:
+                    herobrine_health -= 30
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 ten_percent_miss = random.randint(1,10)
                 if ten_percent_miss == 1:
                     herobrine_health += 15
@@ -80,7 +102,7 @@ while player_health > 0 and herobrine_health > 0:
             else:
                 print("not a valid move")
                 pass
-            n += 1        
+            n += 1      
 -----------------------------------------------------------------
 peter_sans_health = 100
 
