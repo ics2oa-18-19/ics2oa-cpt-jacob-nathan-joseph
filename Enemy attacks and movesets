@@ -3,10 +3,7 @@ import random
 n = 0
 player_health = 100
 herobrine_health = 100
-Herobrine_electrocute = 25
-Herorbrine_teleportsbehindyou = 15
-Herobrine_charge = 15
-Herobrine_smite = 20
+
 
 
 turn = random.randint(1,2) 
@@ -86,10 +83,7 @@ while player_health > 0 and herobrine_health > 0:
             n += 1        
 -----------------------------------------------------------------
 peter_sans_health = 100
-peter_sans_fart = 25
-peter_sans_swing = 15
-peter_sans_yell = 15
-peter_sans_kamekameha = 40
+
 
 turn = random.randint(1,2) 
 if turn == 1:
@@ -146,37 +140,34 @@ while player_health > 0 and peter_sans_health > 0:
     
 ---------------------------------------------------------------------------------------
 player_health = 100
-greg_health = 100
-greg_throw_football = 25
-greg_booger_launch = 15
-greg_slap = 15
-greg_cheese_touch = 20
+ricardo_health = 100
+
 
 turn = random.randint(1,2) 
 if turn == 1:
     n += 1
     print("You go first")
 else:
-    print("Greg goes first")
+    print("Ricardo goes first")
 
-while player_health > 0 and greg_health > 0:
+while player_health > 0 and ricardo_health > 0:
     if n % 2 == 0:
         for x in range(1):
-                greg_move = random.randint(1,4)
-                if greg_move == 1:
-                    print("Gregory threw a football at you, you took 25 damage")
+                ricardo_move = random.randint(1,4)
+                if ricardo_move == 1:
+                    print("Ricardo used flick, you took 25 damage")
                     player_health -= 25
                     print(f"you now have {player_health} health")
-                elif greg_move == 2:
-                    print("Gregory launched his boogers at you, you took 15 damage")
+                elif ricardo_move == 2:
+                    print("ricardo used dance, you took 15 damage")
                     player_health -= 15
                     print(f"you now have {player_health} health")
-                elif greg_move == 3:
-                    print("Gregory slapped you, you took 15 damage")
+                elif ricardo_move == 3:
+                    print("ricardo used charm, you took 15 damage")
                     player_health -= 15
                     print(f"you now have {player_health} health")
-                elif greg_move == 4:
-                    print("Gregory used cheese touch, you are permenantly scarred and took 20 damage")
+                elif ricardo_move == 4:
+                    print("Ricardo used flex, you are permenantly scarred and took 20 damage")
                     player_health -= 20
                     print(f"you now have {player_health} health")
                 n += 1
@@ -184,20 +175,20 @@ while player_health > 0 and greg_health > 0:
             move = input("what move do you want to use?: ")
             if move == "punch":
                 print("you used punch")
-                greg_health -= 20
-                print(f"Gregory now has {greg_health} health")
+                ricardo_health -= 20
+                print(f"Ricardo now has {ricardo_health} health")
             elif move == "kick":
                 print("you used kick")
-                greg_health -= 25
-                print(f"Gregory now has {greg_health} health")
+                ricardo_health -= 25
+                print(f"Ricardo now has {ricardo_health} health")
             elif move == "lick":
                 print("you used lick")
-                greg_health -= 15
-                print(f"Gregory now has {greg_health} health")
+                ricardo_health -= 15
+                print(f"Ricardo now has {ricardo_health} health")
             elif move == "grab":
                 print("you used grab")
-                greg_health -= 15
-                print(f"Gregory now has {greg_health} health")
+                ricardo_health -= 15
+                print(f"Ricardo now has {ricardo_health} health")
             else:
                 print("not a valid move")
                 pass
