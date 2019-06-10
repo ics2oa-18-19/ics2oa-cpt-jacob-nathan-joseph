@@ -119,24 +119,45 @@ while player_health > 0 and peter_sans_health > 0:
             if move == "punch":
                 print("you used punch")
                 peter_sans_health -= 20
+                fifteen_percent_miss = random.randint(1,100)
+                if fifteen_percent_miss <= 15:
+                    peter_sans_health += 20
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Peter sans now has {peter_sans_health} health")
             elif move == "kick":
                 print("you used kick")
                 peter_sans_health -= 25
+                twenty_percent_miss = random.randint(1,5)
+                if twenty_percent_miss == 1:
+                    peter_sans_health += 25
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Peter sans now has {peter_sans_health} health")
             elif move == "lick":
                 print("you used lick")
                 peter_sans_health -= 15
+                if ten_percent_miss == 1:
+                    peter_sans_health += 15
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Peter sans now has {peter_sans_health} health")
             elif move == "grab":
                 print("you used grab")
                 peter_sans_health -= 15
+                if ten_percent_miss == 1:
+                    peter_sans_health += 15
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Peter sans now has {peter_sans_health} health")
             else:
                 print("not a valid move")
                 pass
             n += 1
-        
     
 ---------------------------------------------------------------------------------------
 player_health = 100
@@ -176,18 +197,39 @@ while player_health > 0 and ricardo_health > 0:
             if move == "punch":
                 print("you used punch")
                 ricardo_health -= 20
+                fifteen_percent_miss = random.randint(1,100)
+                if fifteen_percent_miss <= 15:
+                    ricardo_health += 20
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Ricardo now has {ricardo_health} health")
             elif move == "kick":
                 print("you used kick")
                 ricardo_health -= 25
+                if twenty_percent_miss == 1:
+                    ricardo_health += 25
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Ricardo now has {ricardo_health} health")
             elif move == "lick":
                 print("you used lick")
                 ricardo_health -= 15
+                if ten_percent_miss == 1:
+                    ricardo_health += 15
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Ricardo now has {ricardo_health} health")
             elif move == "grab":
                 print("you used grab")
                 ricardo_health -= 15
+                if ten_percent_miss == 1:
+                    ricardo_health += 15
+                    print("Your attack missed!")
+                else:
+                    pass
                 print(f"Ricardo now has {ricardo_health} health")
             else:
                 print("not a valid move")
