@@ -202,9 +202,11 @@ while player_health > 0 and peter_sans_health > 0:
             n += 1
     
 ---------------------------------------------------------------------------------------
+import random
+
+n = 0
 player_health = 100
 ricardo_health = 100
-
 
 turn = random.randint(1,2) 
 if turn == 1:
@@ -239,6 +241,12 @@ while player_health > 0 and ricardo_health > 0:
             if move == "punch":
                 print("you used punch")
                 ricardo_health -= 20
+                ten_percent_crit = random.randint(1,10)
+                if ten_percent_crit == 1:
+                    ricardo_health -= 40
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 fifteen_percent_miss = random.randint(1,100)
                 if fifteen_percent_miss <= 15:
                     ricardo_health += 20
@@ -249,6 +257,10 @@ while player_health > 0 and ricardo_health > 0:
             elif move == "kick":
                 print("you used kick")
                 ricardo_health -= 25
+                ten_percent_crit = random.randint(1,10)
+                if ten_percent_crit == 1:
+                    ricardo_health -= 50
+                    print("your attack was a critical hit!")
                 if twenty_percent_miss == 1:
                     ricardo_health += 25
                     print("Your attack missed!")
@@ -258,6 +270,12 @@ while player_health > 0 and ricardo_health > 0:
             elif move == "lick":
                 print("you used lick")
                 ricardo_health -= 15
+                twenty_five_percent_crit = random.randint(1,4)
+                if twenty_five_percent_crit == 1:
+                    ricardo_health -= 30
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 if ten_percent_miss == 1:
                     ricardo_health += 15
                     print("Your attack missed!")
@@ -267,6 +285,12 @@ while player_health > 0 and ricardo_health > 0:
             elif move == "grab":
                 print("you used grab")
                 ricardo_health -= 15
+                twenty_five_percent_crit = random.randint(1,4)
+                if twenty_five_percent_crit == 1:
+                    ricardo_health -= 30
+                    print("your attack was a critical hit!")
+                else:
+                    pass
                 if ten_percent_miss == 1:
                     ricardo_health += 15
                     print("Your attack missed!")
