@@ -32,18 +32,18 @@ def on_draw():
     # Draw in here...
     if current_screen == "open":
         draw_open()
-    elif current_screen == "movement_screen_one":
-        draw_movement_screen_one()
-    elif current_screen == "movement_screen_two":
-        draw_movement_screen_two()
-    elif current_screen == "movement_screen_three":
-        draw_movement_screen_three()
-    elif current_screen == "boss_fight_one":
-        draw_boss_fight_one()
-    elif current_screen == "boss_fight_two":
-        draw_boss_fight_two()
-    elif current_screen == "boss_fight_three":
-        draw_boss_fight_three()
+    elif current_screen == "movement_one":
+        draw_movement_one()
+    elif current_screen == "movement_two":
+        draw_movement_two()
+    elif current_screen == "movement_three":
+        draw_movement_three()
+    elif current_screen == "boss_one":
+        draw_boss_one()
+    elif current_screen == "boss_two":
+        draw_boss_two()
+    elif current_screen == "boss_three":
+        draw_boss_three()
     elif current_screen == "death_screen":
         draw_death_screen()
     elif current_screen == "finale_screen":
@@ -63,7 +63,6 @@ def on_key_press(key, modifiers):
     elif current_screen == "boss_fight":
         if key == arcade.key.ESCAPE:
             current_screen = "open"
-
 
 def on_key_release(key, modifiers):
     pass
@@ -113,25 +112,13 @@ def draw_button(button):
                                       button[BTN_HEIGHT],
                                       color)
 
-def draw_movement_screen_one():
-    arcade.set_background_color(arcade.color.BLUE_GRAY)
-    arcade.draw_text("Instructions", WIDTH/2, HEIGHT/2,
-                     arcade.color.BLACK, font_size=30, anchor_x="center")
-    arcade.draw_text("ESC to go back", WIDTH/2, HEIGHT/2-60,
-                     arcade.color.BLACK, font_size=20, anchor_x="center")
+def draw_movement_one():
+def draw_movement_two():
+def draw_movement_three():
 
-def draw_movement_screen_two():
-def draw_movement_screen_three():
-
-def draw_boss_fight_one():
-    arcade.set_background_color(arcade.color.ORANGE_RED)
-    arcade.draw_text("Play", WIDTH/2, HEIGHT/2,
-                     arcade.color.BLACK, font_size=30, anchor_x="center")
-
-    arcade.draw_circle_filled(ball_x, 100, 30, arcade.color.WHITE)
-
-def draw_boss_fight_two():
-def draw_boss_fight_three():
+def draw_boss_one():
+def draw_boss_two():
+def draw_boss_three():
 
 def death_screen():
 def finale_screen():
