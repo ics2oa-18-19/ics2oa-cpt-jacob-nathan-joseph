@@ -12,10 +12,11 @@ down_pressed = False
 left_pressed = False
 right_pressed = False
 
+next_screen = False
+
 player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/15, center_y=HEIGHT / 15, scale=0.2)
 
 # Add a horizontal speed to the player sprite
-
 
 def setup():
     arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
@@ -31,7 +32,7 @@ def setup():
 
 
 def update(delta_time):
-    global up_pressed, player_y
+    global up_pressed, player_y, next_screen
     if up_pressed == True:
         player.center_y += 3
     if down_pressed == True:
@@ -41,6 +42,18 @@ def update(delta_time):
     if right_pressed == True:
         player.center_x += 3
 
+    if player.center_x > 620:
+        player.center_x -= 5
+    if player.center_x < 20:
+        player.center_x += 5
+    if player.center_y > 415:
+        player.center_y -= 5
+    if player.center_y < 20:
+        player.center_y += 5
+
+    if player.center_x > 480 and player.center_x < 680 and player.center_y > 360 and player.center_y > 480:
+        next_screen == True
+        print ("Successful")
 
 def on_draw():
     arcade.start_render()
@@ -54,9 +67,8 @@ def on_draw():
     arcade.draw_rectangle_filled(480, 170, 120, 120, arcade.color.HELIOTROPE_GRAY)
     arcade.draw_rectangle_filled(480, 360, 120, 400, arcade.color.HELIOTROPE_GRAY)
 
-    arcade.draw_circle_filled(100, 380, 10, arcade.color.CANARY_YELLOW)
-
     player.draw()
+
 
 def on_key_press(key, modifiers):
     global up_pressed
@@ -72,7 +84,6 @@ def on_key_press(key, modifiers):
     global left_pressed
     if key == arcade.key.A:
         left_pressed = True
-
 
 def on_key_release(key, modifiers):
     global up_pressed
@@ -98,3 +109,4 @@ def on_mouse_press(x, y, button, modifiers):
 
 if __name__ == '__main__':
     setup()
+
