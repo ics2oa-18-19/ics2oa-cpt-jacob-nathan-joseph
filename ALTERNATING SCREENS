@@ -120,19 +120,19 @@ def draw_open():
 
 def draw_instructions():
     arcade.set_background_color(arcade.color.LIGHT_KHAKI)
-    arcade.draw_text("Instructions",  start_x, 400, arcade.color.BLACK, 40, width=200,
+    arcade.draw_text("Instructions",  start_x, 400, arcade.color.BLACK, 35, width=400,
                      align="center",
                      anchor_x="center", anchor_y="center")
-    arcade.draw_text("You will play as 'Shaggy' and fight 3 bosses",  start_x, 330, arcade.color.BLACK, 15, width=600,
+    arcade.draw_text("You will play as 'Shaggy' and fight 3 bosses",  start_x, 350, arcade.color.BLACK, 15, width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
-    arcade.draw_text("You will have a health bar and have 4 attacks to choose from, the attacks can all miss, and crit.",  start_x, 300, arcade.color.BLACK, 15, width=600,
+    arcade.draw_text("You will have a health bar and have 4 attacks to choose from, the attacks can all miss, and crit.",  start_x, 325, arcade.color.BLACK, 15, width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
-    arcade.draw_text("You will be able to dodge attacks to avoid taking damage",  start_x, 270, arcade.color.BLACK, 15, width=600,
+    arcade.draw_text("You will be able to dodge attacks to avoid taking damage",  start_x, 300, arcade.color.BLACK, 15, width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
-    arcade.draw_text("If you die, you will lose all your progress and return to the opening screen",  start_x, 240, arcade.color.BLACK, 15, width=600,
+    arcade.draw_text("If you die, you will lose all your progress and return to the opening screen",  start_x, 275, arcade.color.BLACK, 15, width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
     arcade.draw_text("Press 'ESC' to go back at any screen", 120, 10, arcade.color.BLACK, 10, width=300,
