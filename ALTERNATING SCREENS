@@ -13,18 +13,18 @@ BTN_IS_CLICKED = 5
 BTN_COLOR = 6
 BTN_CLICKED_COLOR = 7
 
+current_screen = "open"
 
-player = arcade.Sprite('shag.png', center_x=WIDTH/2, center_y=HEIGHT/1.7, scale=0.5)
+player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/1.7, scale=0.5)
 
 start_y = 220
 start_x = 300
 
 button2 = [204, 130, 200, 50, "Hello", False, arcade.color.ANTI_FLASH_WHITE, arcade.color.APPLE_GREEN]
 
-current_screen = "open"
 
 def update(delta_time):
-  if current_screen == "play":
+    pass
 
 
 def on_draw():
@@ -32,74 +32,48 @@ def on_draw():
     # Draw in here...
     if current_screen == "open":
         draw_open()
-    elif current_screen == "movement_one":
-        draw_movement_one()
-    elif current_screen == "movement_two":
-        draw_movement_two()
-    elif current_screen == "movement_three":
-        draw_movement_three()
-    elif current_screen == "boss_one":
-        draw_boss_one()
-    elif current_screen == "boss_two":
-        draw_boss_two()
-    elif current_screen == "boss_three":
-        draw_boss_three()
-    elif current_screen == "death_screen":
-        draw_death_screen()
-    elif current_screen == "finale_screen":
-        draw_finale_screen()
+    elif current_screen == "instructions":
+        draw_instructions()
+    elif current_screen == "play":
+        draw_play()
+
 
 def on_key_press(key, modifiers):
     global current_screen
 
     if current_screen == "open":
-        if button[BTN_IS_CLICKED] == True:
-            current_screen = "movement_screen"
-        elif key == arcade.key.ESCAPE:
+        if key == arcade.key.ESCAPE:
             exit()
-    elif current_screen == "movement_screen":
+    elif current_screen == "instructions":
         if key == arcade.key.ESCAPE:
             current_screen = "open"
-    elif current_screen == "boss_fight":
+        if key == arcade.key.P:
+            current_screen = "play"
+    elif current_screen == "play":
         if key == arcade.key.ESCAPE:
             current_screen = "open"
+
 
 def on_key_release(key, modifiers):
     pass
 
 
 def on_mouse_press(x, y, button, modifiers):
-    print(f"Click at ({x}, {y})")
+    global current_screen
 
-    if mouse_is_over(x, y, button2):
-        button2[BTN_IS_CLICKED] = True
+    if current_screen == "open":
+        if mouse_is_over(x, y, button2):
+                button2[BTN_IS_CLICKED] = True
+                current_screen = "instructions"
+
 
 def on_mouse_release(x, y, button, modifiers):
-    button2[BTN_IS_CLICKED] = False
+    global current_screen
+
+    if current_screen == "open":
+            button2[BTN_IS_CLICKED] = False
 
 
-def setup():
-    arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
-    arcade.set_background_color(arcade.color.WHITE)
-    arcade.schedule(update, 1/60)
-
-    window = arcade.get_window()
-    window.on_draw = on_draw
-    window.on_key_press = on_key_press
-    window.on_key_release = on_key_release
-    window.on_mouse_press = on_mouse_press
-
-    arcade.run()
-
-
-def draw_open():
-    arcade.set_background_color(arcade.color.LIGHT_KHAKI)
-    arcade.draw_xywh_rectangle_filled(194, 120, 220, 70, arcade.color.BLACK)
-    draw_button(button2)
-    player.draw()
-    arcade.draw_text("Welcome to Shaggy's Adventures!", start_x, start_y, arcade.color.BLACK, 14, width=200, align="center",
-                     anchor_x="center", anchor_y ="center")
-                     
 def draw_button(button):
     if button[BTN_IS_CLICKED]:
         color = button[BTN_CLICKED_COLOR]
@@ -112,16 +86,69 @@ def draw_button(button):
                                       button[BTN_HEIGHT],
                                       color)
 
-def draw_movement_one():
-def draw_movement_two():
-def draw_movement_three():
+def mouse_is_over(x, y, button):
+    # Check if click happened on button
+    if (x > button[BTN_X] and x < button[BTN_X] + button[BTN_WIDTH] and
+            y > button[BTN_Y] and y < button[BTN_Y] + button[BTN_HEIGHT]):
+        return True
+    else:
+        return False
 
-def draw_boss_one():
-def draw_boss_two():
-def draw_boss_three():
+def setup():
+    arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
+    arcade.set_background_color(arcade.color.WHITE)
+    arcade.schedule(update, 1/60)
 
-def death_screen():
-def finale_screen():
+    # Override arcade window methods
+    window = arcade.get_window()
+    window.on_draw = on_draw
+    window.on_key_press = on_key_press
+    window.on_key_release = on_key_release
+    window.on_mouse_press = on_mouse_press
+
+    arcade.run()
+
+
+def draw_open():
+    arcade.set_background_color(arcade.color.LIGHT_KHAKI)
+    arcade.draw_xywh_rectangle_filled(194, 120, 220, 70, arcade.color.BLACK)
+    player.draw()
+    draw_button(button2)
+    arcade.draw_text("Welcome to Shaggy's Adventures!", start_x, start_y, arcade.color.BLACK, 14, width=200,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+
+def draw_instructions():
+    arcade.set_background_color(arcade.color.LIGHT_KHAKI)
+    arcade.draw_text("Instructions",  start_x, 400, arcade.color.BLACK, 40, width=200,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+    arcade.draw_text("You will play as 'Shaggy' and fight 3 bosses",  start_x, 330, arcade.color.BLACK, 15, width=600,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+    arcade.draw_text("You will have a health bar and have 4 attacks to choose from, the attacks can all miss, and crit.",  start_x, 300, arcade.color.BLACK, 15, width=600,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+    arcade.draw_text("You will be able to dodge attacks to avoid taking damage",  start_x, 270, arcade.color.BLACK, 15, width=600,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+    arcade.draw_text("If you die, you will lose all your progress and return to the opening screen",  start_x, 240, arcade.color.BLACK, 15, width=600,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+    arcade.draw_text("Press 'ESC' to go back at any screen", 120, 10, arcade.color.BLACK, 10, width=300,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+    arcade.draw_text("Press 'P' to fight the first boss", 540, 10, arcade.color.BLACK, 10, width=300,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+                                                                                                                             
+def draw_play():
+    arcade.set_background_color(arcade.color.ORANGE_RED)
+    arcade.draw_text("Play", WIDTH/2, HEIGHT/2,
+                     arcade.color.BLACK, font_size=30, anchor_x="center")
+
+    arcade.draw_circle_filled(ball_x, 100, 30, arcade.color.WHITE)
+
 
 if __name__ == '__main__':
     setup()
