@@ -12,8 +12,6 @@ down_pressed = False
 left_pressed = False
 right_pressed = False
 
-next_screen = False
-
 
 BTN_X = 0
 BTN_Y = 1
