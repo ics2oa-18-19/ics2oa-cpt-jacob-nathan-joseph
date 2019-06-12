@@ -1,0 +1,85 @@
+
+
+import arcade
+
+
+WIDTH = 640
+HEIGHT = 480
+
+button1 = [22, 1.5, 115, 40, False, arcade.color.BLUE, arcade.color.GREEN]
+BTN_X = 1
+BTN_Y = 1
+BTN_WIDTH = 2               
+BTN_HEIGHT = 3
+BTN_IS_CLICKED = 4
+BTN_COLOR = 5
+BTN_CLICKED_COLOR = 6
+health = 100
+fight = arcade.Sprite('Sprites/fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+
+
+
+
+
+def update(delta_time):
+    pass
+
+
+def on_draw():
+    arcade.start_render()
+    fight.draw()
+    if button1[BTN_IS_CLICKED]:
+        color = button1[BTN_CLICKED_COLOR]
+    else:
+        color = button1[BTN_COLOR]
+
+
+    arcade.draw_xywh_rectangle_filled(button1[BTN_X > 22],
+                                      button1[BTN_Y],
+                                      button1[BTN_WIDTH],
+                                      button1[BTN_HEIGHT],
+                                      color)
+
+    arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
+
+
+
+
+def on_key_press(key, modifiers):
+    pass
+
+
+def on_key_release(key, modifiers):
+    pass
+
+
+def on_mouse_press(x, y, button, modifiers):
+    print(f"Click at ({x}, {y})")
+
+
+    if (x > button1[BTN_X] and x < button1[BTN_X] + button1[BTN_WIDTH] and
+            y > button1[BTN_Y] and y < button1[BTN_Y] + button1[BTN_HEIGHT]):
+        button1[BTN_IS_CLICKED] = True
+
+def on_mouse_release(x, y, button, modifiers):
+
+    button1[BTN_IS_CLICKED] = False
+
+def setup():
+    arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
+    arcade.set_background_color(arcade.color.WHITE)
+    arcade.schedule(update, 1/60)
+
+    # Override arcade window methods
+    window = arcade.get_window()
+    window.on_draw = on_draw
+    window.on_key_press = on_key_press
+    window.on_key_release = on_key_release
+    window.on_mouse_press = on_mouse_press
+    window.on_mouse_release = on_mouse_release
+
+    arcade.run()
+
+
+if __name__ == '__main__':
+    setup()
