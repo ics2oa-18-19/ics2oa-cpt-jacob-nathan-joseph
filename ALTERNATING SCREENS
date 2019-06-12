@@ -4,6 +4,17 @@ import arcade
 WIDTH = 640
 HEIGHT = 480
 
+player_x = WIDTH / 2
+player_y = HEIGHT / 2
+
+up_pressed = False
+down_pressed = False
+left_pressed = False
+right_pressed = False
+
+next_screen = False
+
+
 BTN_X = 0
 BTN_Y = 1
 BTN_WIDTH = 2
@@ -26,6 +37,26 @@ button2 = [204, 130, 200, 50, "Hello", False, arcade.color.ANTI_FLASH_WHITE, arc
 
 
 def update(delta_time):
+    global current_screen, up_pressed, player_y
+    
+    if current_screen == "movement":
+        if up_pressed == True:
+            player.center_y += 3
+        if down_pressed == True:
+            player.center_y -= 3
+        if left_pressed == True:
+            player.center_x -= 3
+        if right_pressed == True:
+            player.center_x += 3
+        if player.center_x > 620:
+            player.center_x -= 5
+        if player.center_x < 20:
+            player.center_x += 5
+        if player.center_y > 415:
+            player.center_y -= 5
+        if player.center_y < 20:
+            player.center_y += 5
+    
     if current_screen == "boss_one" or "boss_two" or "boss_three":
         if health <= 0:
             current_screen = "death"
@@ -44,7 +75,9 @@ def on_draw():
         draw_death()
     elif current_screen = "final":
         draw_final()
-
+    elif current_screen = "movement":
+        draw_movement()
+    
 def on_key_press(key, modifiers):
     global current_screen
 
@@ -65,9 +98,47 @@ def on_key_press(key, modifiers):
      elif current_screen == "final":
         if key == arcade.key.ESCAPE:
             current_screen = "open"
+     elif current_screen == "movement":
+        if key == arcade.key.ESCAPE:
+            current_screen = "open"
+            
+            
+     if current_screen = "movement"
+        global up_pressed
+        if key == arcade.key.W:
+            up_pressed = True
+
+        global down_pressed
+        if key == arcade.key.S:
+            down_pressed = True
+            
+        global right_pressed
+        if key == arcade.key.D:
+            right_pressed = True
+            
+        global left_pressed
+        if key == arcade.key.A:
+            left_pressed = True
+     
+        
 
 def on_key_release(key, modifiers):
-    pass
+    if current_screen = "movement":
+        global up_pressed
+        if key == arcade.key.W:
+            up_pressed = False
+
+        global down_pressed
+        if key == arcade.key.S:
+            down_pressed = False
+
+        global right_pressed
+        if key == arcade.key.D:
+            right_pressed = False
+
+        global left_pressed
+        if key == arcade.key.A:
+            left_pressed = False
 
 
 def on_mouse_press(x, y, button, modifiers):
@@ -111,7 +182,6 @@ def setup():
     arcade.set_background_color(arcade.color.WHITE)
     arcade.schedule(update, 1/60)
 
-    # Override arcade window methods
     window = arcade.get_window()
     window.on_draw = on_draw
     window.on_key_press = on_key_press
@@ -147,6 +217,9 @@ def draw_instructions():
     arcade.draw_text("If you die, you will lose all your progress and return to the opening screen",  start_x, 275, arcade.color.BLACK, 15, width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
+    arcade.draw_text("Use 'WASD' Keys to move around in the movement screens", start_x, 250, arcade.color.BLACK, 15, width=800,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
     arcade.draw_text("Press 'ESC' to return to the opening screen", 120, 10, arcade.color.BLACK, 10, width=300,
                      align="center",
                      anchor_x="center", anchor_y="center")
@@ -160,6 +233,17 @@ def draw_play():
                      align="center", anchor_x="center", anchor_y="center")
     arcade.draw_circle_filled(ball_x, 100, 30, arcade.color.WHITE)
 
+def draw_movement():
+    arcade.set_background_color(arcade.color.DARTMOUTH_GREEN)
+    arcade.draw_rectangle_filled(10, 10, 200, 200, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(640, 480, 200, 200, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(120, 10, 200, 200, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(160, 170, 120, 120, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(240, 170, 120, 120, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(360, 170, 120, 120, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(480, 170, 120, 120, arcade.color.HELIOTROPE_GRAY)
+    arcade.draw_rectangle_filled(480, 360, 120, 400, arcade.color.HELIOTROPE_GRAY)
+    player.draw()
 
 def draw_death():
     you_died.draw()
