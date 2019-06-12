@@ -16,6 +16,8 @@ BTN_CLICKED_COLOR = 7
 current_screen = "open"
 
 player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/1.7, scale=0.5)
+you_died = arcade.Sprite('images/death.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+the_end = arcade.Sprite('images/end.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
 
 start_y = 220
 start_x = 300
@@ -24,7 +26,9 @@ button2 = [204, 130, 200, 50, "Hello", False, arcade.color.ANTI_FLASH_WHITE, arc
 
 
 def update(delta_time):
-    pass
+    if current_screen == "boss_one" or "boss_two" or "boss_three":
+        if health <= 0:
+            current_screen = "death"
 
 
 def on_draw():
@@ -36,7 +40,10 @@ def on_draw():
         draw_instructions()
     elif current_screen == "play":
         draw_play()
-
+    elif current_screen = "death":
+        draw_death()
+    elif current_screen = "final":
+        draw_final()
 
 def on_key_press(key, modifiers):
     global current_screen
@@ -52,7 +59,12 @@ def on_key_press(key, modifiers):
     elif current_screen == "play":
         if key == arcade.key.ESCAPE:
             current_screen = "open"
-
+     elif current_screen == "death"
+        if key == arcade.key.ESCAPE:
+            current_screen = "open"
+     elif current_screen == "final":
+        if key == arcade.key.ESCAPE:
+            current_screen = "open"
 
 def on_key_release(key, modifiers):
     pass
@@ -135,7 +147,7 @@ def draw_instructions():
     arcade.draw_text("If you die, you will lose all your progress and return to the opening screen",  start_x, 275, arcade.color.BLACK, 15, width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
-    arcade.draw_text("Press 'ESC' to go back at any screen", 120, 10, arcade.color.BLACK, 10, width=300,
+    arcade.draw_text("Press 'ESC' to return to the opening screen", 120, 10, arcade.color.BLACK, 10, width=300,
                      align="center",
                      anchor_x="center", anchor_y="center")
     arcade.draw_text("Press 'P' to fight the first boss", 540, 10, arcade.color.BLACK, 10, width=300,
@@ -144,11 +156,26 @@ def draw_instructions():
                                                                                                                              
 def draw_play():
     arcade.set_background_color(arcade.color.ORANGE_RED)
-    arcade.draw_text("Play", WIDTH/2, HEIGHT/2,
-                     arcade.color.BLACK, font_size=30, anchor_x="center")
-
+    arcade.draw_text("Play", WIDTH/2, HEIGHT/2, arcade.color.BLACK, font_size=30, width=300,
+                     align="center", anchor_x="center", anchor_y="center")
     arcade.draw_circle_filled(ball_x, 100, 30, arcade.color.WHITE)
 
+
+def draw_death():
+    you_died.draw()
+    arcade.draw_text("Press 'ESC' to return to the opening screen", 120, 10, arcade.color.RED, 10, width=300,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+def draw_final():
+    arcade.set_background_color(arcade.color.LIGHT_KHAKI)
+    the_end.draw()
+    arcade.draw_text("Press 'ESC' to return to the opening screen", 120, 10, arcade.color.WHITE, 10, width=300,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
+                     
+#def draw_boss_one():
+#def draw_boss_two():
+#def draw_boss_three():
 
 if __name__ == '__main__':
     setup()
