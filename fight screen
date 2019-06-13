@@ -1,9 +1,24 @@
 import arcade
-
-
+import random
 WIDTH = 640
 HEIGHT = 480
 
+location_1 = random.randint(1,640)
+location_2 = random.randint(1,640)
+location_3 = random.randint(1,640)
+location_4 = random.randint(1,640)
+location_5 = random.randint(1,640)
+bolt = arcade.Sprite('bolt.png', center_x=location_1, center_y =HEIGHT, scale=0.1)
+bolt_2 = arcade.Sprite('bolt.png',center_x= location_2, center_y = HEIGHT, scale= 0.1)
+bolt_3 = arcade.Sprite('bolt.png',center_x= location_3, center_y = HEIGHT, scale= 0.1)
+bolt_4 = arcade.Sprite('bolt.png',center_x= location_4, center_y = HEIGHT, scale= 0.1)
+bolt_5 = arcade.Sprite('bolt.png',center_x= location_5, center_y = HEIGHT, scale= 0.1)
+
+bolt.change_y = -5
+bolt_2.change_y = -5
+bolt_3.change_y = -5
+bolt_4.change_y = -5
+bolt_5.change_y = -5
 button1 = [22, 1.5, 115, 40, False, (255, 0, 0, 0), arcade.color.GREEN]
 button2 = [184, 1.5, 115, 40, False,(255, 0, 0, 0) , arcade.color.GREEN]
 button3 = [353, 1.5, 115, 40, False,(255, 0, 0, 0), arcade.color.GREEN]
@@ -18,49 +33,84 @@ BTN_CLICKED_COLOR = 6
 health = 100
 fight = arcade.Sprite('fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
 
+def setup():
+    arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
+    arcade.set_background_color(arcade.color.BLACK)
+    arcade.schedule(update, 1/60)
 
+    # Override arcade window methods
+    window = arcade.get_window()
+    window.on_draw = on_draw
+    window.on_key_press = on_key_press
+    window.on_key_release = on_key_release
 
+    arcade.run()
 
 
 def update(delta_time):
-    pass
+    bolt.update()
+    if bolt.center_y == 275:
+        bolt.stop()
+    bolt_2.update()
+    if bolt_2.center_y == 275:
+        bolt_2.stop()
+    bolt_3.update()
+    if bolt_3.center_y == 275:
+        bolt_3.stop()
+    bolt_4.update()
+    if bolt_4.center_y == 275:
+        bolt_4.stop()
+    bolt_5.update()
+    if bolt_5.center_y == 275:
+        bolt_5.stop()
+
+
+
+
+
 
 
 def on_draw():
     arcade.start_render()
     fight.draw()
+    bolt.draw()
+    bolt_2.draw()
+    bolt_3.draw()
+    bolt_4.draw()
+    bolt_5.draw()
     arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
     if button1[BTN_IS_CLICKED]:
         color = button1[BTN_CLICKED_COLOR]
     else:
         color = button1[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button1[BTN_Y > 184], button1[BTN_X], button1[BTN_WIDTH], button1[BTN_HEIGHT],color)
+    arcade.draw_xywh_rectangle_filled(button1[BTN_Y > 184], button1[BTN_X], button1[BTN_WIDTH], button1[BTN_HEIGHT],
+                                      color)
     if button2[BTN_IS_CLICKED]:
         color = button2[BTN_CLICKED_COLOR]
     else:
         color = button2[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button2[BTN_Y >184], button2[BTN_X], button2[BTN_WIDTH], button2[BTN_HEIGHT],color)
+    arcade.draw_xywh_rectangle_filled(button2[BTN_Y > 184], button2[BTN_X], button2[BTN_WIDTH], button2[BTN_HEIGHT],
+                                      color)
     if button3[BTN_IS_CLICKED]:
         color = button3[BTN_CLICKED_COLOR]
     else:
         color = button3[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button3[BTN_Y >184], button3[BTN_X], button3[BTN_WIDTH], button3[BTN_HEIGHT],color)
+    arcade.draw_xywh_rectangle_filled(button3[BTN_Y > 184], button3[BTN_X], button3[BTN_WIDTH], button3[BTN_HEIGHT],
+                                      color)
     if button4[BTN_IS_CLICKED]:
         color = button4[BTN_CLICKED_COLOR]
     else:
         color = button4[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button4[BTN_Y >184], button4[BTN_X], button4[BTN_WIDTH], button4[BTN_HEIGHT],color)
-
+    arcade.draw_xywh_rectangle_filled(button4[BTN_Y > 184], button4[BTN_X], button4[BTN_WIDTH], button4[BTN_HEIGHT],
+                                      color)
 
 
 def on_key_press(key, modifiers):
     pass
 
 
-
 def on_key_release(key, modifiers):
     pass
-
 
 
 def on_mouse_press(x, y, button, modifiers):
@@ -106,4 +156,3 @@ def setup():
 
 if __name__ == '__main__':
     setup()
-
