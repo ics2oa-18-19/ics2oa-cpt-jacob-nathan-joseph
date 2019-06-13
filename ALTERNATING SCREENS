@@ -16,10 +16,9 @@ BTN_X = 0
 BTN_Y = 1
 BTN_WIDTH = 2
 BTN_HEIGHT = 3
-BTN_LABEL = 4
-BTN_IS_CLICKED = 5
-BTN_COLOR = 6
-BTN_CLICKED_COLOR = 7
+BTN_IS_CLICKED = 4
+BTN_COLOR = 5
+BTN_CLICKED_COLOR = 6
 
 current_screen = "open"
 
@@ -31,7 +30,7 @@ the_end = arcade.Sprite('images/end.png', center_x=WIDTH / 2, center_y=HEIGHT / 
 start_y = 220
 start_x = 300
 
-button2 = [204, 130, 200, 50, "Hello", False, arcade.color.ANTI_FLASH_WHITE, arcade.color.ANTI_FLASH_WHITE]
+button2 = [204, 130, 200, 50, False, arcade.color.ANTI_FLASH_WHITE, arcade.color.ANTI_FLASH_WHITE]
 
 
 def update(delta_time):
