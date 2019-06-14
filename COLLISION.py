@@ -14,7 +14,7 @@ down_pressed = False
 left_pressed = False
 right_pressed = False
 
-player = arcade.Sprite('game/images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
+player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
 
 
 def setup():
@@ -48,7 +48,7 @@ def update(delta_time):
     b = projectile_1[1] - player.center_y
     dist = math.sqrt(a**2 + b**2)
 
-    if dist < projectile_1[2] + player.scale:
+    if dist < projectile_1[2] + player.scale * 150:
         health -= 1
 
     # move projectile
