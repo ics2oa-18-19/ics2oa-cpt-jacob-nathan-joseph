@@ -11,30 +11,33 @@ down_pressed = False
 left_pressed = False
 right_pressed = False
 
-player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
+player = arcade.Sprite('shag.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
 
-Herobrine_move = random.randint(1,3)
-location_1 = random.randint(1,640)
-location_2 = random.randint(1,640)
-location_3 = random.randint(1,640)
-location_4 = random.randint(1,640)
-location_5 = random.randint(1,640)
+herobrine_move = random.randint(1,3)
 
-mine = arcade.Sprite('images/mine.png', center_x = 40, center_y = random.randint(265,450), scale=0.065)
-mine_2 = arcade.Sprite('images/mine.png', center_x = 600, center_y = random.randint(265,450), scale=0.065)
+
+mine = arcade.Sprite('mine.png', center_x = 40, center_y = random.randint(265,450), scale=0.065)
+mine_2 = arcade.Sprite('mine.png', center_x = 600, center_y = random.randint(265,450), scale=0.065)
 mine.change_x = 6
 mine_2.change_x = -6
 
-smite = arcade.Sprite('images/smite.png', center_x = location_1, center_y = HEIGHT + 300, scale=0.35)
-smite_2 = arcade.Sprite('images/smite.png', center_x = location_2, center_y = HEIGHT + 300, scale=0.35)
+smite = arcade.Sprite('smite.png', center_x = random.randint(1,640)
+, center_y = HEIGHT + 300, scale=0.35)
+smite_2 = arcade.Sprite('smite.png', center_x = random.randint(1,640)
+, center_y = HEIGHT + 300, scale=0.35)
 smite.change_y = -5
 smite_2.change_y = -5
 
-bolt = arcade.Sprite('images/bolt.png', center_x=location_1, center_y =HEIGHT, scale=0.08)
-bolt_2 = arcade.Sprite('images/bolt.png',center_x= location_2, center_y = HEIGHT, scale= 0.08)
-bolt_3 = arcade.Sprite('images/bolt.png',center_x= location_3, center_y = HEIGHT, scale= 0.08)
-bolt_4 = arcade.Sprite('images/bolt.png',center_x= location_4, center_y = HEIGHT, scale= 0.08)
-bolt_5 = arcade.Sprite('images/bolt.png',center_x= location_5, center_y = HEIGHT, scale= 0.08)
+bolt = arcade.Sprite('bolt.png', center_x= random.randint(1,640)
+, center_y =HEIGHT, scale=0.08)
+bolt_2 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
+, center_y = HEIGHT, scale= 0.08)
+bolt_3 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
+, center_y = HEIGHT, scale= 0.08)
+bolt_4 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
+, center_y = HEIGHT, scale= 0.08)
+bolt_5 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
+, center_y = HEIGHT, scale= 0.08)
 bolt.change_y = -5
 bolt_2.change_y = -5
 bolt_3.change_y = -5
@@ -56,25 +59,42 @@ BTN_CLICKED_COLOR = 6
 
 health = 100
 
-fight = arcade.Sprite('images/fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+fight = arcade.Sprite('fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
 
 def setup():
     arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
     arcade.set_background_color(arcade.color.BLACK)
     arcade.schedule(update, 1/60)
 
-    # Override arcade window methods
     window = arcade.get_window()
     window.on_draw = on_draw
     window.on_key_press = on_key_press
     window.on_key_release = on_key_release
 
+
     arcade.run()
+
 
 
 def on_draw():
     arcade.start_render()
     fight.draw()
+    player.draw()
+    if herobrine_move == 1:
+            mine.draw()
+            mine_2.draw()
+    elif herobrine_move == 2:
+            smite.draw()
+            smite_2.draw()
+    elif herobrine_move == 3:
+            bolt.draw()
+            bolt_2.draw()
+            bolt_3.draw()
+            bolt_4.draw()
+            bolt_5.draw()
+
+
+
     arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
 
     if button1[BTN_IS_CLICKED]:
@@ -105,44 +125,17 @@ def on_draw():
     arcade.draw_xywh_rectangle_filled(button4[BTN_X], button4[BTN_Y], button4[BTN_WIDTH], button4[BTN_HEIGHT],
                                       color)
 
-    if Herobrine_move == 1:
-            mine.draw()
-            mine_2.draw()
-            arcade.draw_text(f"Herobrine used 'Mine', you know have {health} hp.", 300, 200,
-                                        arcade.color.WHITE, 20, width=640,
-                                        align="center",
-                                        anchor_x="center", anchor_y="center")
 
-    if Herobrine_move == 2:
-            smite.draw()
-            smite_2.draw()
-            arcade.draw_text(f"Herobrine used 'Smite', you know have {health} hp.", 300, 200,
-                                        arcade.color.WHITE, 20, width=640,
-                                        align="center",
-                                        anchor_x="center", anchor_y="center")
-
-    if Herobrine_move == 3:
-            bolt.draw()
-            bolt_2.draw()
-            bolt_3.draw()
-            bolt_4.draw()
-            bolt_5.draw()
-            arcade.draw_text(f"Herobrine used 'Lightning', you know have {health} hp.", 300, 200,
-                                        arcade.color.WHITE, 20, width=640,
-                                        align="center",
-                                        anchor_x="center", anchor_y="center")
-
-    player.draw()
 def update(delta_time):
     global up_pressed, player_y
     if up_pressed == True:
-        player.center_y += 6
+        player.center_y += 7
     if down_pressed == True:
-        player.center_y -= 6
+        player.center_y -= 7
     if left_pressed == True:
-        player.center_x -= 6
+        player.center_x -= 7
     if right_pressed == True:
-        player.center_x += 6
+        player.center_x += 7
     if player.center_x > 640:
         player.center_x -= 5
     if player.center_x < 20:
@@ -151,37 +144,80 @@ def update(delta_time):
         player.center_y -= 5
     if player.center_y < 230:
         player.center_y += 5
-    mine.update()
-    mine_2.update()
-    smite.update()
-    if smite.center_y == 530:
-        smite.stop()
-    smite_2.update()
-    if smite_2.center_y == 530:
-        smite_2.stop()
-    bolt.update()
-    if bolt.center_y == 265:
-        bolt.stop()
-    bolt_2.update()
-    if bolt_2.center_y == 265:
-        bolt_2.stop()
-    bolt_3.update()
-    if bolt_3.center_y == 265:
-        bolt_3.stop()
-    bolt_4.update()
-    if bolt_4.center_y == 265:
-        bolt_4.stop()
-    bolt_5.update()
-    if bolt_5.center_y == 265:
-        bolt_5.stop()
 
+
+    if herobrine_move == 1:
+        mine.update()
+        mine_hit = arcade.check_for_collision(player, mine)
+        while mine_hit == True:
+            print("hit")
+            break
+        mine_2.update()
+        mine_hit_2 = arcade.check_for_collision(player, mine_2)
+        while mine_hit_2 == True:
+            print("hit")
+            break
+
+
+    if herobrine_move == 2:
+        smite.update()
+        smite_hit = arcade.check_for_collision(player, smite)
+        while smite_hit == True:
+            print("hit")
+            break
+        if smite.center_y == 530:
+            smite.stop()
+        smite_2.update()
+        smite_hit_2 = arcade.check_for_collision(player, smite_2)
+        while smite_hit_2 == True:
+            print("hit")
+            break
+        if smite_2.center_y == 530:
+            smite_2.stop()
+
+
+    if herobrine_move == 3:
+        bolt.update()
+        hit = arcade.check_for_collision(player, bolt)
+        while hit == True:
+            print("hit")
+            break
+        if bolt.center_y == 265:
+            bolt.stop()
+        bolt_2.update()
+        hit_2 = arcade.check_for_collision(player, bolt_2)
+        while hit_2 == True:
+            print("hit")
+            break
+        if bolt_2.center_y == 265:
+            bolt_2.stop()
+        bolt_3.update()
+        hit_3 = arcade.check_for_collision(player, bolt_3)
+        while hit_3 == True:
+            print("hit")
+            break
+        if bolt_3.center_y == 265:
+            bolt_3.stop()
+        bolt_4.update()
+        hit_4 = arcade.check_for_collision(player, bolt_4)
+        while hit_4 == True:
+            print("hit")
+            break
+        if bolt_4.center_y == 265:
+            bolt_4.stop()
+        bolt_5.update()
+        hit_5 = arcade.check_for_collision(player, bolt_5)
+        while hit_5 == True:
+            print("hit")
+            break
+        if bolt_5.center_y == 265:
+            bolt_5.stop()
 
 
 def on_key_press(key, modifiers):
     global up_pressed
     if key == arcade.key.W:
         up_pressed = True
-
     global down_pressed
     if key == arcade.key.S:
         down_pressed = True
