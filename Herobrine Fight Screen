@@ -108,18 +108,18 @@ def on_draw():
     if Herobrine_move == 1:
             mine.draw()
             mine_2.draw()
-    arcade.draw_text("Herobrine used 'Mine', you know have {health} hp.", WIDTH/2, HEIGHT/2,
-                                      arcade.color.WHITE, 50, width=800,
-                                      align="center",
-                                      anchor_x="center", anchor_y="center")
+            arcade.draw_text(f"Herobrine used 'Mine', you know have {health} hp.", 300, 200,
+                                        arcade.color.WHITE, 20, width=640,
+                                        align="center",
+                                        anchor_x="center", anchor_y="center")
 
     if Herobrine_move == 2:
             smite.draw()
             smite_2.draw()
-    arcade.draw_text("Herobrine used 'Smite', you know have {health} hp.", WIDTH/2, HEIGHT/2,
-                     arcade.color.WHITE, 50, width=800,
-                     align="center",
-                     anchor_x="center", anchor_y="center")
+            arcade.draw_text(f"Herobrine used 'Smite', you know have {health} hp.", 300, 200,
+                                        arcade.color.WHITE, 20, width=640,
+                                        align="center",
+                                        anchor_x="center", anchor_y="center")
 
     if Herobrine_move == 3:
             bolt.draw()
@@ -127,12 +127,10 @@ def on_draw():
             bolt_3.draw()
             bolt_4.draw()
             bolt_5.draw()
-    arcade.draw_text("Herobrine used 'Lightning', you know have {health} hp.", WIDTH/2, HEIGHT/2,
-                     arcade.color.WHITE, 50, width=200,
-                     align="center",
-                     anchor_x="center", anchor_y="center")
-
-
+            arcade.draw_text(f"Herobrine used 'Lightning', you know have {health} hp.", 300, 200,
+                                        arcade.color.WHITE, 20, width=640,
+                                        align="center",
+                                        anchor_x="center", anchor_y="center")
 
     player.draw()
 def update(delta_time):
