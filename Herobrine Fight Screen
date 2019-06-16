@@ -26,15 +26,13 @@ mine.change_x = 10
 mine_2.change_x = -10
 mine.change_angle = 10
 mine_2.change_angle = 10
-mine_pos_1 = random.randint(265,450)
-mine_pos_2 = random.randint(265,450)
+
 
 smite = arcade.Sprite('smite.png', center_x = random.randint(1,640)
 , center_y = HEIGHT + 300, scale=0.35)
-smite_2 = arcade.Sprite('smite.png', center_x = random.randint(1,640)
-, center_y = HEIGHT + 300, scale=0.35)
 smite.change_y = -10
-smite_2.change_y = -10
+
+
 
 bolt = arcade.Sprite('bolt.png', center_x= random.randint(1,640)
 , center_y =HEIGHT, scale=0.08)
@@ -51,7 +49,6 @@ bolt_2.change_y = -10
 bolt_3.change_y = -10
 bolt_4.change_y = -10
 bolt_5.change_y = -10
-turn = random.randint(1, 2)
 button1 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button2 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button3 = [353, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
@@ -92,7 +89,6 @@ def on_draw():
     mine.draw()
     mine_2.draw()
     smite.draw()
-    smite_2.draw()
     bolt.draw()
     bolt_2.draw()
     bolt_3.draw()
@@ -110,6 +106,39 @@ def on_draw():
     elif mine_2.center_x == 600:
         mine_2.change_x = -10
         mine_2.center_y = random.randint(265, 450)
+    if smite.center_y == 400:
+        smite.center_y += HEIGHT
+        smite.center_x = random.randint(1,640)
+    if bolt.center_y == 160:
+        bolt.center_y += HEIGHT
+        bolt.center_x = random.randint(1,640)
+    if bolt_2.center_y == 160:
+        bolt_2.center_y += HEIGHT
+        bolt_2.center_x = random.randint(1,640)
+    if bolt_3.center_y == 160:
+        bolt_3.center_y += HEIGHT
+        bolt_3.center_x = random.randint(1,640)
+    if bolt_4.center_y == 160:
+        bolt_4.center_y += HEIGHT
+        bolt_4.center_x = random.randint(1,640)
+    if bolt_5.center_y == 160:
+        bolt_5.center_y += HEIGHT
+        bolt_5.center_x = random.randint(1,640)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -164,14 +193,14 @@ def update(delta_time):
         player.center_x += 20
     if player.center_y > 450:
         player.center_y -= 20
-    if player.center_y < 100:
+    if player.center_y < 150:
         player.center_y += 20
 
     if button1[BTN_IS_CLICKED]:
-        herobrine_health -= 0.5
+        herobrine_health -= 1
 
     if button2[BTN_IS_CLICKED]:
-        health += 0.5
+        health += 0.7
 
     mine.update()
 
@@ -189,12 +218,6 @@ def update(delta_time):
     smite.update()
     smite_hit = arcade.check_for_collision(player, smite)
     while smite_hit == True:
-        print("hit")
-        health -= 1
-        break
-    smite_2.update()
-    smite_hit_2 = arcade.check_for_collision(player, smite_2)
-    while smite_hit_2 == True:
         print("hit")
         health -= 1
         break
