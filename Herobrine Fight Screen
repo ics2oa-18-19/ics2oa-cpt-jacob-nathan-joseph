@@ -112,20 +112,12 @@ def on_draw():
             mine_2.draw()
             text = (f"Herobrine used 'Mine', you now have {health} hp.")
 
-            arcade.draw_text(text, 300, 200,
-                                        arcade.color.WHITE, 20, width=640,
-                                        align="center",
-                                        anchor_x="center", anchor_y="center")
 
     if Herobrine_move == 2:
             smite.draw()
             smite_2.draw()
             text = (f"Herobrine used 'Smite', you now have {health} hp.")
 
-            arcade.draw_text(text, 300, 200,
-                                        arcade.color.WHITE, 20, width=640,
-                                        align="center",
-                                        anchor_x="center", anchor_y="center")
 
     if Herobrine_move == 3:
             bolt.draw()
@@ -135,14 +127,14 @@ def on_draw():
             bolt_5.draw()
             text = (f"Herobrine used 'Lightning', you know have {health} hp.")
 
-            arcade.draw_text(text, 300, 200,
-                                        arcade.color.WHITE, 20, width=640,
-                                        align="center",
-                                        anchor_x="center", anchor_y="center")
 
+    arcade.draw_text(text, 300, 200,
+                     arcade.color.WHITE, 20, width=640,
+                     align="center",
+                     anchor_x="center", anchor_y="center")
     player.draw()
-    
-    
+
+
 def update(delta_time):
     global up_pressed, player_y
     if up_pressed == True:
