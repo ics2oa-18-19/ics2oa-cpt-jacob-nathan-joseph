@@ -24,6 +24,10 @@ mine = arcade.Sprite('mine.png', center_x = 40, center_y = random.randint(265,45
 mine_2 = arcade.Sprite('mine.png', center_x = 600, center_y = random.randint(265,450), scale=0.065)
 mine.change_x = 10
 mine_2.change_x = -10
+mine.change_angle = 10
+mine_2.change_angle = 10
+mine_pos_1 = random.randint(265,450)
+mine_pos_2 = random.randint(265,450)
 
 smite = arcade.Sprite('smite.png', center_x = random.randint(1,640)
 , center_y = HEIGHT + 300, scale=0.35)
@@ -65,7 +69,7 @@ health = 100
 
 fight = arcade.Sprite('fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
 
-
+n = 1
 
 def setup():
     arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
@@ -81,9 +85,7 @@ def setup():
     arcade.run()
 
 
-
 def on_draw():
-    global timer
     arcade.start_render()
     fight.draw()
     player.draw()
@@ -96,10 +98,23 @@ def on_draw():
     bolt_3.draw()
     bolt_4.draw()
     bolt_5.draw()
+    if mine.center_x == 600:
+        mine.change_x = -10
+        mine.center_y = random.randint(265,450)
+    elif mine.center_x == 40:
+        mine.change_x = 10
+        mine.center_y = random.randint(265, 450)
+    if mine_2.center_x == 40:
+        mine_2.change_x = 10
+        mine_2.center_y = random.randint(265, 450)
+    elif mine_2.center_x == 600:
+        mine_2.change_x = -10
+        mine_2.center_y = random.randint(265, 450)
+
 
 
     arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
-    arcade.draw_xywh_rectangle_filled(20, 450, herobrine_health * 2, 20, arcade.color.RED)
+    arcade.draw_xywh_rectangle_filled(160, 90, herobrine_health * 2, 20, arcade.color.RED)
 
     if button1[BTN_IS_CLICKED]:
         color = button1[BTN_CLICKED_COLOR]
@@ -134,6 +149,7 @@ def update(delta_time):
     global herobrine_health
     global up_pressed, player_y
     global health
+
     if up_pressed == True:
         player.center_y += 9
     if down_pressed == True:
@@ -148,17 +164,17 @@ def update(delta_time):
         player.center_x += 20
     if player.center_y > 450:
         player.center_y -= 20
-    if player.center_y < 245:
+    if player.center_y < 100:
         player.center_y += 20
 
     if button1[BTN_IS_CLICKED]:
-        herobrine_health -= 0.7
+        herobrine_health -= 0.5
 
     if button2[BTN_IS_CLICKED]:
         health += 0.5
 
-
     mine.update()
+
     mine_hit = arcade.check_for_collision(player, mine)
     while mine_hit == True:
         health -= 2
@@ -247,6 +263,8 @@ def on_key_release(key, modifiers):
 
 
 def on_mouse_press(x, y, button, modifiers):
+    print(f"Click at ({x}, {y})")
+
     if (x > button1[BTN_X] and x < button1[BTN_X] + button1[BTN_WIDTH] and
             y > button1[BTN_Y] and y < button1[BTN_Y] + button1[BTN_HEIGHT]):
         button1[BTN_IS_CLICKED] = True
