@@ -27,26 +27,26 @@ location_x_4 = random.randint(240,480)
 location_x_5 = random.randint(240,480)
 
 #attacks
-cock = arcade.Sprite('images/cock.png', center_x = 40, center_y = random.randint(265,450), scale=0.2)
-cock_2 = arcade.Sprite('images/cock.png', center_x = 600, center_y = random.randint(265,450), scale=0.2)
+cock = arcade.Sprite('images/sans_cock.png', center_x = 40, center_y = random.randint(265,450), scale=0.2)
+cock_2 = arcade.Sprite('images/sans_cock.png', center_x = 600, center_y = random.randint(265,450), scale=0.2)
 cock.change_x = +8
 cock_2.change_x = -8
 
-bone = arcade.Sprite('images/bone.png', center_x = 700, center_y = location_x_1, scale=0.35)
-bone_2 = arcade.Sprite('images/bone.png', center_x = 700, center_y = location_x_2, scale=0.35)
-bone_3 = arcade.Sprite('images/bone2.png', center_x = location_1, center_y = 690, scale = 0.35)
-bone_4 = arcade.Sprite('images/bone2.png', center_x = location_2, center_y = 690, scale = 0.35)
+bone = arcade.Sprite('images/sans_bone.png', center_x = 700, center_y = location_x_1, scale=0.35)
+bone_2 = arcade.Sprite('images/sans_bone.png', center_x = 700, center_y = location_x_2, scale=0.35)
+bone_3 = arcade.Sprite('images/sans_bone2.png', center_x = location_1, center_y = 690, scale = 0.35)
+bone_4 = arcade.Sprite('images/sans_bone2.png', center_x = location_2, center_y = 690, scale = 0.35)
 bone.change_x = -10
 bone_2.change_x = -10
 bone_3.change_y = -10
 bone_4.change_y = -10
 
 
-emeralds = arcade.Sprite('images/master_emerald.png', center_x=700, center_y =location_x_1, scale=0.2)
-emeralds_2 = arcade.Sprite('images/blue_emerald.png', center_x= 690, center_y = location_x_2, scale= 0.07)
-emeralds_3 = arcade.Sprite('images/yellow_emerald.png', center_x= 750, center_y = location_x_3, scale= 0.4)
-emeralds_4 = arcade.Sprite('images/red_emerald.png', center_x= 800, center_y = location_x_4, scale= 0.08)
-emeralds_5 = arcade.Sprite('images/white_emerald.png', center_x= 840, center_y = location_x_5, scale= 0.07)
+emeralds = arcade.Sprite('images/sans_master_emerald.png', center_x=700, center_y =location_x_1, scale=0.2)
+emeralds_2 = arcade.Sprite('images/sans_blue_emerald.png', center_x= 690, center_y = location_x_2, scale= 0.07)
+emeralds_3 = arcade.Sprite('images/sans_yellow_emerald.png', center_x= 750, center_y = location_x_3, scale= 0.4)
+emeralds_4 = arcade.Sprite('images/sans_red_emerald.png', center_x= 800, center_y = location_x_4, scale= 0.08)
+emeralds_5 = arcade.Sprite('images/sans_white_emerald.png', center_x= 840, center_y = location_x_5, scale= 0.07)
 emeralds.change_x = -10
 emeralds_2.change_x = -10
 emeralds_3.change_x = -10
@@ -68,7 +68,7 @@ BTN_CLICKED_COLOR = 6
 
 health = 100
 
-fight = arcade.Sprite('images/fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+fight = arcade.Sprite('images/screen_fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
 
 
 def setup():
