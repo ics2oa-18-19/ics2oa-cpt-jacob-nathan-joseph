@@ -28,23 +28,23 @@ location_x_4 = random.randint(240, 480)
 location_x_5 = random.randint(240, 480)
 
 # attacks
-flex = arcade.Sprite('images/flex.png', center_x=320, center_y=-200, scale=3)
+flex = arcade.Sprite('images/ricardo_flex.png', center_x=320, center_y=-200, scale=3)
 flex.change_y = +4
 
-charm = arcade.Sprite('images/charm.png', center_x=700, center_y=location_x_1, scale=0.07)
-charm_2 = arcade.Sprite('images/charm.png', center_x=780, center_y=location_x_2, scale=0.07)
-charm_3 = arcade.Sprite('images/charm.png', center_x=860, center_y=location_x_3, scale=0.07)
-charm_4 = arcade.Sprite('images/charm.png', center_x=940, center_y=location_x_4, scale=0.07)
+charm = arcade.Sprite('images/ricardo_charm.png', center_x=700, center_y=location_x_1, scale=0.07)
+charm_2 = arcade.Sprite('images/ricardo_charm.png', center_x=780, center_y=location_x_2, scale=0.07)
+charm_3 = arcade.Sprite('images/ricardo_charm.png', center_x=860, center_y=location_x_3, scale=0.07)
+charm_4 = arcade.Sprite('images/ricardo_charm.png', center_x=940, center_y=location_x_4, scale=0.07)
 charm.change_x = -6
 charm_2.change_x = -6
 charm_3.change_x = -6
 charm_4.change_x = -6
 
-ricardo = arcade.Sprite('images/ricardo2.gif', center_x=700, center_y=300, scale=0.2)
-ricardo_2 = arcade.Sprite('images/ricardo3.png', center_x=-750, center_y=340, scale=0.25)
-ricardo_3 = arcade.Sprite('images/ricardo4.gif', center_x=-1500, center_y=2000, scale=0.5)
-ricardo_4 = arcade.Sprite('images/ricardo5.gif', center_x=2950, center_y=2600, scale=0.6)
-ricardo_5 = arcade.Sprite('images/ricardo.png', center_x=320, center_y=-968, scale=0.4)
+ricardo = arcade.Sprite('images/ricardo_ricardo2.gif', center_x=700, center_y=300, scale=0.2)
+ricardo_2 = arcade.Sprite('images/ricardo_ricardo3.png', center_x=-750, center_y=340, scale=0.25)
+ricardo_3 = arcade.Sprite('images/ricardo_ricardo4.gif', center_x=-1500, center_y=2000, scale=0.5)
+ricardo_4 = arcade.Sprite('images/ricardo_ricardo5.gif', center_x=2950, center_y=2600, scale=0.6)
+ricardo_5 = arcade.Sprite('images/ricardo_ricardo.png', center_x=320, center_y=-968, scale=0.4)
 ricardo.change_x = -10
 ricardo_2.change_x = +10
 ricardo_3.change_x = +10
@@ -68,7 +68,7 @@ BTN_CLICKED_COLOR = 6
 
 health = 100
 
-fight = arcade.Sprite('images/fight.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scale=1)
+fight = arcade.Sprite('images/screen_fight.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scale=1)
 
 
 def setup():
