@@ -243,8 +243,8 @@ def update(delta_time):
             health -= 2
             break
 
-        #if health < 0:
-            #current_screen = "death"
+        if health < 0:
+            current_screen = "death"
         if herobrine_health < 0:
             current_screen = "movement3"
 
@@ -294,8 +294,8 @@ def update(delta_time):
         while hit == True:
             health -= 2
             break
-        #if health < 0:
-            #current_screen = "death"
+        if health < 0:
+            current_screen = "death"
         if ricardo_health < 0:
             current_screen = "movement2"
 
@@ -371,8 +371,8 @@ def update(delta_time):
         while hit_5 == True:
             health -= 2
             break
-        #if health < 0:
-            #current_screen = "death_screen"
+        if health < 0:
+            current_screen = "death_screen"
         if sans_health < 0:
             current_screen = "final"
 
