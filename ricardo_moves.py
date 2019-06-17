@@ -15,32 +15,30 @@ down_pressed = False
 left_pressed = False
 right_pressed = False
 
-player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
+player = arcade.Sprite('shag.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
 
 herobrine_move = random.randint(1,3)
 herobrine_health = 150
 
-flex = arcade.Sprite('images/ricardo_flex.png', center_x = 40, center_y = random.randint(265,450), scale=0.5)
-flex_2 = arcade.Sprite('images/ricardo_flex.png', center_x = 600, center_y = random.randint(265,450), scale=0.5)
+flex = arcade.Sprite('ricardo_flex.png', center_x = 40, center_y = random.randint(265,450), scale=0.5)
+flex_2 = arcade.Sprite('ricardo_flex.png', center_x = 600, center_y = random.randint(265,450), scale=0.5)
 flex.change_x = 10
 flex_2.change_x = -10
 flex.change_angle = 10
 flex_2.change_angle = 10
 
 
-charm = arcade.Sprite('images/ricardo_charm.png', center_x = random.randint(1,640)
+charm = arcade.Sprite('ricardo_charm.png', center_x = random.randint(1,640)
 , center_y = HEIGHT + 300, scale=0.13)
 charm.change_y = -10
 
 
 
-milos = arcade.Sprite('images/ricardo_ricardo.png', center_x= random.randint(1,640)
+milos = arcade.Sprite('ricardo_ricardo.png', center_x= random.randint(1,640)
 , center_y =HEIGHT, scale=0.1)
-milos_2 = arcade.Sprite('images/ricardo_ricardo2.gif',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.2)
 
 milos.change_y = -10
-milos_2.change_y = -10
+
 
 button1 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button2 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
@@ -57,7 +55,7 @@ BTN_CLICKED_COLOR = 6
 
 health = 100
 
-fight = arcade.Sprite('images/screen_fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+fight = arcade.Sprite('fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
 
 n = 1
 
@@ -83,7 +81,7 @@ def on_draw():
     flex_2.draw()
     charm.draw()
     milos.draw()
-    milos_2.draw()
+
 
     if flex.center_x == 600:
         flex.change_x = -10
@@ -97,32 +95,12 @@ def on_draw():
     elif flex_2.center_x == 600:
         flex_2.change_x = -10
         flex_2.center_y = random.randint(265, 450)
-    if charm.center_y == 400:
+    if charm.center_y == 180:
         charm.center_y += HEIGHT
         charm.center_x = random.randint(1,640)
     if milos.center_y == 160:
         milos.center_y += HEIGHT
         milos.center_x = random.randint(1,640)
-    if milos_2.center_y == 160:
-        milos_2.center_y += HEIGHT
-        milos_2.center_x = random.randint(1,640)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
@@ -210,14 +188,6 @@ def update(delta_time):
         print("hit")
         health -= 2
         break
-    milos_2.update()
-    hit_2 = arcade.check_for_collision(player, milos_2)
-    while hit_2 == True:
-        print("hit")
-        health -= 2
-        break
-
-
 
 def on_key_press(key, modifiers):
     global up_pressed
