@@ -24,7 +24,7 @@ BTN_CLICKED_COLOR = 6
 current_screen = "open"
 
 player = arcade.Sprite('shag.png', center_x=WIDTH / 15, center_y=HEIGHT / 15, scale=0.2)
-player_title = arcade.Sprite('shag.png', center_x=WIDTH / 2, center_y=HEIGHT / 1.7, scale=0.5)
+player_title = arcade.Sprite('shag.png', center_x=WIDTH / 2, center_y= 350, scale=0.5)
 you_died = arcade.Sprite('death.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scale=2.6)
 the_end = arcade.Sprite('end.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scale=1)
 
