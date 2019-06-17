@@ -108,13 +108,13 @@ def update(delta_time):
 
     if current_screen == "movement" or "movement2" or "movement3":
         if up_pressed == True:
-            player.center_y += 3
+            player.center_y += 8
         if down_pressed == True:
-            player.center_y -= 3
+            player.center_y -= 8
         if left_pressed == True:
-            player.center_x -= 3
+            player.center_x -= 8
         if right_pressed == True:
-            player.center_x += 3
+            player.center_x += 8
         if player.center_x > 620:
             player.center_x -= 5
         if player.center_x < 20:
@@ -625,6 +625,16 @@ def draw_boss_one():
         color = button4[BTN_COLOR]
     arcade.draw_xywh_rectangle_filled(button4[BTN_X], button4[BTN_Y], button4[BTN_WIDTH], button4[BTN_HEIGHT],
                                       color)
+    button5[BTN_IS_CLICKED] = False
+
+    button1[BTN_IS_CLICKED] = False
+
+    button2[BTN_IS_CLICKED] = False
+
+    button3[BTN_IS_CLICKED] = False
+
+    button4[BTN_IS_CLICKED] = False
+
 
 def draw_boss_two():
     fight.draw()
@@ -683,6 +693,13 @@ def draw_boss_two():
         color = button14[BTN_COLOR]
     arcade.draw_xywh_rectangle_filled(button14[BTN_X], button14[BTN_Y], button14[BTN_WIDTH], button14[BTN_HEIGHT],
                                       color)
+    button11[BTN_IS_CLICKED] = False
+
+    button12[BTN_IS_CLICKED] = False
+
+    button13[BTN_IS_CLICKED] = False
+
+    button14[BTN_IS_CLICKED] = False
 #def draw_boss_three():
 
 if __name__ == '__main__':
