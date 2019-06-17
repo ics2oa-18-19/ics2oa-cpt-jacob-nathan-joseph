@@ -17,10 +17,10 @@ herobrine_move = random.randint(1,3)
 
 herobrine_health = 150
 
-cock = arcade.Sprite('images/sans_cock.png', center_x = 40, center_y = random.randint(265,450), scale=0.065)
-cock_2 = arcade.Sprite('images/sans_cock.png', center_x = 600, center_y = random.randint(265,450), scale=0.065)
-cock.change_x = 10
-cock_2.change_x = -10
+cock = arcade.Sprite('images/sans_cock.png', center_x = 40, center_y = random.randint(265,450), scale=0.12)
+cock_2 = arcade.Sprite('images/sans_cock.png', center_x = 600, center_y = random.randint(265,450), scale=0.12)
+cock.change_x = 3
+cock_2.change_x = -3
 cock.change_angle = 10
 cock_2.change_angle = 10
 cock_pos_1 = random.randint(265,450)
@@ -29,28 +29,28 @@ cock_pos_2 = random.randint(265,450)
 
 bone = arcade.Sprite('images/sans_bone.png', center_x = random.randint(1,640)
 , center_y = HEIGHT + 300, scale=0.35)
-bone_2 = arcade.Sprite('images/sans_bone2.png', center_x = random.randint(1,640)
-, center_y = HEIGHT + 300, scale=0.35)
-bone.change_y = -10
-bone_2.change_y = -10
+bone_2 = arcade.Sprite('images/sans_bone2.png', center_x = 700
+, center_y = random.randint(100,640), scale=0.35)
+bone.change_y = -5
+bone_2.change_x = -5
 
 
 
 emerald = arcade.Sprite('images/sans_master_emerald.png', center_x= random.randint(1,640)
 , center_y =HEIGHT, scale=0.08)
 emerald_2 = arcade.Sprite('images/sans_red_emerald.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
+, center_y = HEIGHT + 70, scale= 0.08)
 emerald_3 = arcade.Sprite('images/sans_blue_emerald.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
+, center_y = HEIGHT + 140, scale= 0.08)
 emerald_4 = arcade.Sprite('images/sans_white_emerald.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
+, center_y = HEIGHT + 210, scale= 0.08)
 emerald_5 = arcade.Sprite('images/sans_yellow_emerald.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-emerald.change_y = -10
-emerald_2.change_y = -10
-emerald_3.change_y = -10
-emerald_4.change_y = -10
-emerald_5.change_y = -10
+, center_y = HEIGHT + 280, scale= 0.08)
+emerald.change_y = -6
+emerald_2.change_y = -6
+emerald_3.change_y = -6
+emerald_4.change_y = -6
+emerald_5.change_y = -6
 turn = random.randint(1, 2)
 button1 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button2 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
@@ -90,32 +90,35 @@ def on_draw():
     emerald_5.draw()
     if cock.center_x == 600:
         cock.change_x = -10
-        cock.center_y = random.randint(265,450)
+        cock.center_y = random.randint(100,450)
     elif cock.center_x == 40:
         cock.change_x = 10
-        cock.center_y = random.randint(265, 450)
+        cock.center_y = random.randint(100, 450)
     if cock_2.center_x == 40:
         cock_2.change_x = 10
-        cock_2.center_y = random.randint(265, 450)
+        cock_2.center_y = random.randint(100, 450)
     elif cock_2.center_x == 600:
         cock_2.change_x = -10
-        cock_2.center_y = random.randint(265, 450)
-    if bone.center_y == 400:
+        cock_2.center_y = random.randint(100, 450)
+    if bone.center_y == -20:
         bone.center_y += HEIGHT
         bone.center_x = random.randint(1,640)
-    if emerald.center_y == 160:
+    if bone_2.center_x == -20:
+        bone_2.center_x += WIDTH
+        bone_2.center_y = random.randint(1,640)
+    if emerald.center_y == 100:
         emerald.center_y += HEIGHT
         emerald.center_x = random.randint(1,640)
-    if emerald_2.center_y == 160:
+    if emerald_2.center_y == 100:
         emerald_2.center_y += HEIGHT
         emerald_2.center_x = random.randint(1,640)
-    if emerald_3.center_y == 160:
+    if emerald_3.center_y == 100:
         emerald_3.center_y += HEIGHT
         emerald_3.center_x = random.randint(1,640)
-    if emerald_4.center_y == 160:
+    if emerald_4.center_y == 100:
         emerald_4.center_y += HEIGHT
         emerald_4.center_x = random.randint(1,640)
-    if emerald_5.center_y == 160:
+    if emerald_5.center_y == 100:
         emerald_5.center_y += HEIGHT
         emerald_5.center_x = random.randint(1,640)
 
