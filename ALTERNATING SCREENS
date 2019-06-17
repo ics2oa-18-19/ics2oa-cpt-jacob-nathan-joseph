@@ -33,57 +33,52 @@ start_x = 300
 
 button5 = [204, 130, 200, 50, False, arcade.color.ANTI_FLASH_WHITE, arcade.color.ANTI_FLASH_WHITE]
 
-herobrine_move = random.randint(1,3)
+herobrine_move = random.randint(1, 3)
 herobrine_health = 150
 
-mine = arcade.Sprite('mine.png', center_x = 40, center_y = random.randint(265,450), scale=0.065)
-mine_2 = arcade.Sprite('mine.png', center_x = 600, center_y = random.randint(265,450), scale=0.065)
+mine = arcade.Sprite('mine.png', center_x=40, center_y=random.randint(265, 450), scale=0.065)
+mine_2 = arcade.Sprite('mine.png', center_x=600, center_y=random.randint(265, 450), scale=0.065)
 mine.change_x = 10
 mine_2.change_x = -10
 mine.change_angle = 10
 mine_2.change_angle = 10
 
-
-smite = arcade.Sprite('smite.png', center_x = random.randint(1,640)
-, center_y = HEIGHT + 300, scale=0.35)
+smite = arcade.Sprite('smite.png', center_x=random.randint(1, 640)
+                      , center_y=HEIGHT + 300, scale=0.35)
 smite.change_y = -10
 
-
-bolt = arcade.Sprite('bolt.png', center_x= random.randint(1,640)
-, center_y =HEIGHT, scale=0.08)
-bolt_2 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-bolt_3 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-bolt_4 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-bolt_5 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
+bolt = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                     , center_y=HEIGHT, scale=0.08)
+bolt_2 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
+bolt_3 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
+bolt_4 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
+bolt_5 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
 bolt.change_y = -10
 bolt_2.change_y = -10
 bolt_3.change_y = -10
 bolt_4.change_y = -10
 bolt_5.change_y = -10
 
-ricardo_move = random.randint(1,3)
+ricardo_move = random.randint(1, 3)
 ricardo_health = 150
 
-flex = arcade.Sprite('ricardo_flex.png', center_x = 40, center_y = random.randint(265,450), scale=0.5)
-flex_2 = arcade.Sprite('ricardo_flex.png', center_x = 600, center_y = random.randint(265,450), scale=0.5)
+flex = arcade.Sprite('ricardo_flex.png', center_x=40, center_y=random.randint(265, 450), scale=0.5)
+flex_2 = arcade.Sprite('ricardo_flex.png', center_x=600, center_y=random.randint(265, 450), scale=0.5)
 flex.change_x = 10
 flex_2.change_x = -10
 flex.change_angle = 10
 flex_2.change_angle = 10
 
-
-charm = arcade.Sprite('ricardo_charm.png', center_x = random.randint(1,640)
-, center_y = HEIGHT + 300, scale=0.13)
+charm = arcade.Sprite('ricardo_charm.png', center_x=random.randint(1, 640)
+                      , center_y=HEIGHT + 300, scale=0.13)
 charm.change_y = -10
 
-
-
-milos = arcade.Sprite('ricardo_ricardo.png', center_x= random.randint(1,640)
-, center_y =HEIGHT, scale=0.1)
+milos = arcade.Sprite('ricardo_ricardo.png', center_x=random.randint(1, 640)
+                      , center_y=HEIGHT, scale=0.1)
 
 milos.change_y = -10
 
@@ -99,9 +94,10 @@ button14 = [518, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 
 health = 120
 
-fight = arcade.Sprite('fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+fight = arcade.Sprite('fight.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scale=1)
 
 n = 1
+
 
 def update(delta_time):
     global current_screen, up_pressed, player_y, herobrine_health, health, ricardo_health
@@ -124,15 +120,14 @@ def update(delta_time):
         if player.center_y < 20:
             player.center_y += 5
 
-
     if current_screen == "movement":
         if player.center_x > 600 and player.center_y > 400:
-            current_screen = "boss_one"
+            current_screen = "boss_two"
         health = 120
 
     if current_screen == "movement2":
         if player.center_x > 600 and player.center_y > 400:
-            current_screen = "boss_two"
+            current_screen = "boss_one"
         health = 120
 
     if current_screen == "boss_one":
@@ -204,7 +199,7 @@ def update(delta_time):
         if health < 0:
             current_screen = "death"
         if herobrine_health < 0:
-            current_screen = "movement2"
+            current_screen = "movement3"
 
     if current_screen == "boss_two":
         if up_pressed == True:
@@ -254,8 +249,9 @@ def update(delta_time):
             break
         if health < 0:
             current_screen = "death"
-        elif ricardo_health < 0:
-            current_screen = "movement3"
+        if ricardo_health < 0:
+            current_screen = "movement2"
+
 
 def on_draw():
     arcade.start_render()
@@ -278,6 +274,8 @@ def on_draw():
         draw_boss_one()
     elif current_screen == "boss_two":
         draw_boss_two()
+
+
 def on_key_press(key, modifiers):
     global current_screen, up_pressed, down_pressed, right_pressed, left_pressed
 
@@ -325,6 +323,7 @@ def on_key_press(key, modifiers):
         if key == arcade.key.A:
             left_pressed = True
 
+
 def on_key_release(key, modifiers):
     global current_screen, up_pressed, down_pressed, left_pressed, right_pressed
     if current_screen == "movement" or "movement2" or "movement3":
@@ -351,6 +350,7 @@ def on_key_release(key, modifiers):
 
         if key == arcade.key.A:
             left_pressed = False
+
 
 def on_mouse_press(x, y, button, modifiers):
     global current_screen
@@ -388,6 +388,8 @@ def on_mouse_press(x, y, button, modifiers):
         if (x > button14[BTN_X] and x < button14[BTN_X] + button14[BTN_WIDTH] and
                 y > button14[BTN_Y] and y < button14[BTN_Y] + button14[BTN_HEIGHT]):
             button14[BTN_IS_CLICKED] = True
+
+
 def on_mouse_release(x, y, button, modifiers):
     global current_screen
 
@@ -411,6 +413,8 @@ def on_mouse_release(x, y, button, modifiers):
         button13[BTN_IS_CLICKED] = False
 
         button14[BTN_IS_CLICKED] = False
+
+
 def draw_button(button):
     if button[BTN_IS_CLICKED]:
         color = button[BTN_CLICKED_COLOR]
@@ -473,7 +477,8 @@ def draw_instructions():
         300, arcade.color.BLACK, 10, width=800,
         align="center",
         anchor_x="center", anchor_y="center")
-    arcade.draw_text("You will have 100 health each fight. You can dodge to avoid damage", start_x, 250, arcade.color.BLACK, 10,
+    arcade.draw_text("You will have 100 health each fight. You can dodge to avoid damage", start_x, 250,
+                     arcade.color.BLACK, 10,
                      width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
@@ -508,6 +513,7 @@ def draw_movement():
                      align="center",
                      anchor_x="center", anchor_y="center")
 
+
 def draw_movement2():
     arcade.set_background_color(arcade.color.DARTMOUTH_GREEN)
     arcade.draw_rectangle_filled(10, 10, 200, 200, arcade.color.HELIOTROPE_GRAY)
@@ -523,6 +529,7 @@ def draw_movement2():
                      align="center",
                      anchor_x="center", anchor_y="center")
 
+
 def draw_movement3():
     arcade.set_background_color(arcade.color.DARTMOUTH_GREEN)
     arcade.draw_rectangle_filled(10, 10, 200, 200, arcade.color.HELIOTROPE_GRAY)
@@ -537,6 +544,7 @@ def draw_movement3():
     arcade.draw_text("Walk to the end of the path", 560, 10, arcade.color.BLACK, 10, width=300,
                      align="center",
                      anchor_x="center", anchor_y="center")
+
 
 def draw_death():
     you_died.draw()
@@ -700,6 +708,7 @@ def draw_boss_two():
     button13[BTN_IS_CLICKED] = False
 
     button14[BTN_IS_CLICKED] = False
+
 #def draw_boss_three():
 
 if __name__ == '__main__':
