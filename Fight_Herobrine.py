@@ -175,6 +175,7 @@ def update(delta_time):
     if player.center_y > 450:
         player.center_y -= 20
     if player.center_y < 100:
+        player.center_y += 20
     if player.center_y < 150:
         player.center_y += 20
 
