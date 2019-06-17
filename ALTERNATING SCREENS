@@ -141,9 +141,8 @@ fight = arcade.Sprite('fight.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scal
 
 n = 1
 
-
 def update(delta_time):
-    global current_screen, up_pressed, player_y, herobrine_health, health, ricardo_health
+    global current_screen, up_pressed, player_y, herobrine_health, health, ricardo_health, sans_health
 
     if current_screen == "movement" or "movement2" or "movement3":
         if up_pressed == True:
@@ -171,6 +170,11 @@ def update(delta_time):
     if current_screen == "movement2":
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_one"
+        health = 120
+
+    if current_screen == "movement3":
+        if player.center_x > 600 and player.center_y > 400:
+            current_screen = "boss_three"
         health = 120
 
     if current_screen == "boss_one":
@@ -239,8 +243,8 @@ def update(delta_time):
             health -= 2
             break
 
-        if health < 0:
-            current_screen = "death"
+        #if health < 0:
+            #current_screen = "death"
         if herobrine_health < 0:
             current_screen = "movement3"
 
@@ -290,8 +294,8 @@ def update(delta_time):
         while hit == True:
             health -= 2
             break
-        if health < 0:
-            current_screen = "death"
+        #if health < 0:
+            #current_screen = "death"
         if ricardo_health < 0:
             current_screen = "movement2"
 
@@ -316,12 +320,10 @@ def update(delta_time):
             player.center_y += 20
 
         if button21[BTN_IS_CLICKED]:
-            sans_health -= 0.5
             sans_health -= 1
 
         if button22[BTN_IS_CLICKED]:
             health += 0.5
-            health += 0.7
 
         cock.update()
 
@@ -369,6 +371,11 @@ def update(delta_time):
         while hit_5 == True:
             health -= 2
             break
+        #if health < 0:
+            #current_screen = "death_screen"
+        if sans_health < 0:
+            current_screen = "final"
+
 def on_draw():
     arcade.start_render()
     # Draw in here...
@@ -390,6 +397,8 @@ def on_draw():
         draw_boss_one()
     elif current_screen == "boss_two":
         draw_boss_two()
+    elif current_screen == "boss_three":
+        draw_boss_three()
 
 
 def on_key_press(key, modifiers):
@@ -466,7 +475,6 @@ def on_key_release(key, modifiers):
 
         if key == arcade.key.A:
             left_pressed = False
-
 
 def on_mouse_press(x, y, button, modifiers):
     global current_screen
