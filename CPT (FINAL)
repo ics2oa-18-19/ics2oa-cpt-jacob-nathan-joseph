@@ -37,7 +37,7 @@ herobrine = arcade.Sprite('images/herobrine.png', center_x = 600, center_y = 410
 
 herobrine_move = random.randint(1, 3)
 herobrine_health = 80
-shaggy = arcade.Sprite('images/shaggy.png', center_x = 600, center_y = 410, scale = 0.1)
+shaggy = arcade.Sprite('images/shaggy.png', center_x = 530, center_y = 350, scale = 0.8)
 mine = arcade.Sprite('images/herobrine_mine.png', center_x=40, center_y=random.randint(265, 450), scale=0.065)
 mine_2 = arcade.Sprite('images/herobrine_mine.png', center_x=600, center_y=random.randint(265, 450), scale=0.065)
 mine.change_x = 5
@@ -171,19 +171,19 @@ def update(delta_time):
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_two"
         health = 120
-        ricardo_health = 130
+        ricardo_health = 80
 
     if current_screen == "movement2":
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_one"
         health = 120
-        herobrine_health = 130
+        herobrine_health = 80
 
     if current_screen == "movement3":
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_three"
         health = 120
-        sans_health = 130
+        sans_health = 80
 
     if current_screen == "boss_one":
         if up_pressed == True:
@@ -229,17 +229,17 @@ def update(delta_time):
         bolt.update()
         hit = arcade.check_for_collision(player, bolt)
         while hit == True:
-            health -= 2
+            health -= 1
             break
         bolt_2.update()
         hit_2 = arcade.check_for_collision(player, bolt_2)
         while hit_2 == True:
-            health -= 2
+            health -= 1
             break
         bolt_3.update()
         hit_3 = arcade.check_for_collision(player, bolt_3)
         while hit_3 == True:
-            health -= 2
+            health -= 1
             break
         bolt_4.update()
         hit_4 = arcade.check_for_collision(player, bolt_4)
@@ -248,7 +248,7 @@ def update(delta_time):
         bolt_5.update()
         hit_5 = arcade.check_for_collision(player, bolt_5)
         while hit_5 == True:
-            health -= 2
+            health -= 1
             break
 
         if health < 0:
@@ -295,7 +295,7 @@ def update(delta_time):
         charm.update()
         charm_hit = arcade.check_for_collision(player, charm)
         while charm_hit == True:
-            health -= 1
+            health -= 5
             break
         milos.update()
         hit = arcade.check_for_collision(player, milos)
