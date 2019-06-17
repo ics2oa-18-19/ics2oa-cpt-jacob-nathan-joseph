@@ -174,16 +174,19 @@ def update(delta_time):
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_two"
         health = 120
+        ricardo_health = 150
 
     if current_screen == "movement2":
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_one"
         health = 120
+        herobrine_health = 130
 
     if current_screen == "movement3":
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_three"
         health = 120
+        sans_health = 130
 
     if current_screen == "boss_one":
         if up_pressed == True:
