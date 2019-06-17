@@ -13,9 +13,9 @@ right_pressed = False
 
 player = arcade.Sprite('images/shagstill.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=0.2)
 
-herobrine_move = random.randint(1,3)
+peter_sans_move = random.randint(1,3)
 
-herobrine_health = 150
+peter_sans_health = 150
 
 cock = arcade.Sprite('images/sans_cock.png', center_x = 40, center_y = random.randint(265,450), scale=0.12)
 cock_2 = arcade.Sprite('images/sans_cock.png', center_x = 600, center_y = random.randint(265,450), scale=0.12)
@@ -140,7 +140,7 @@ def on_draw():
 
 
     arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
-    arcade.draw_xywh_rectangle_filled(160, 90, herobrine_health * 2, 20, arcade.color.RED)
+    arcade.draw_xywh_rectangle_filled(160, 90, peter_sans_health * 2, 20, arcade.color.RED)
     if button1[BTN_IS_CLICKED]:
         color = button1[BTN_CLICKED_COLOR]
     else:
@@ -166,7 +166,7 @@ def on_draw():
     arcade.draw_xywh_rectangle_filled(button4[BTN_X], button4[BTN_Y], button4[BTN_WIDTH], button4[BTN_HEIGHT],
                                       color)
 def update(delta_time):
-    global herobrine_health
+    global peter_sans_health
     global up_pressed, player_y
     global health
     if up_pressed == True:
@@ -189,8 +189,8 @@ def update(delta_time):
         player.center_y += 20
 
     if button1[BTN_IS_CLICKED]:
-        herobrine_health -= 0.5
-        herobrine_health -= 1
+        peter_sans_health -= 0.5
+        peter_sans_health -= 1
 
     if button2[BTN_IS_CLICKED]:
         health += 0.5
