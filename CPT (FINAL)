@@ -122,18 +122,14 @@ turn = random.randint(1, 2)
 
 button1 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button2 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
-button3 = [353, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
-button4 = [518, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
+
 
 button11 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button12 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
-button13 = [353, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
-button14 = [518, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
+
 
 button21 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button22 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
-button23 = [353, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
-button24 = [518, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 
 health = 120
 
@@ -492,12 +488,7 @@ def on_mouse_press(x, y, button, modifiers):
         if (x > button2[BTN_X] and x < button2[BTN_X] + button2[BTN_WIDTH] and
                 y > button2[BTN_Y] and y < button2[BTN_Y] + button2[BTN_HEIGHT]):
             button2[BTN_IS_CLICKED] = True
-        if (x > button3[BTN_X] and x < button3[BTN_X] + button3[BTN_WIDTH] and
-                y > button3[BTN_Y] and y < button3[BTN_Y] + button3[BTN_HEIGHT]):
-            button3[BTN_IS_CLICKED] = True
-        if (x > button4[BTN_X] and x < button4[BTN_X] + button4[BTN_WIDTH] and
-                y > button4[BTN_Y] and y < button4[BTN_Y] + button4[BTN_HEIGHT]):
-            button4[BTN_IS_CLICKED] = True
+
     if current_screen == "boss_two":
         if (x > button11[BTN_X] and x < button11[BTN_X] + button11[BTN_WIDTH] and
                 y > button11[BTN_Y] and y < button11[BTN_Y] + button11[BTN_HEIGHT]):
@@ -506,12 +497,7 @@ def on_mouse_press(x, y, button, modifiers):
         if (x > button12[BTN_X] and x < button12[BTN_X] + button12[BTN_WIDTH] and
                 y > button12[BTN_Y] and y < button12[BTN_Y] + button12[BTN_HEIGHT]):
             button12[BTN_IS_CLICKED] = True
-        if (x > button13[BTN_X] and x < button13[BTN_X] + button13[BTN_WIDTH] and
-                y > button13[BTN_Y] and y < button13[BTN_Y] + button13[BTN_HEIGHT]):
-            button13[BTN_IS_CLICKED] = True
-        if (x > button14[BTN_X] and x < button14[BTN_X] + button14[BTN_WIDTH] and
-                y > button14[BTN_Y] and y < button14[BTN_Y] + button14[BTN_HEIGHT]):
-            button14[BTN_IS_CLICKED] = True
+
     if current_screen == "boss_three":
 
         if (x > button21[BTN_X] and x < button21[BTN_X] + button21[BTN_WIDTH] and
@@ -520,12 +506,7 @@ def on_mouse_press(x, y, button, modifiers):
         if (x > button22[BTN_X] and x < button22[BTN_X] + button22[BTN_WIDTH] and
                 y > button22[BTN_Y] and y < button22[BTN_Y] + button22[BTN_HEIGHT]):
             button22[BTN_IS_CLICKED] = True
-        if (x > button23[BTN_X] and x < button23[BTN_X] + button23[BTN_WIDTH] and
-                y > button23[BTN_Y] and y < button23[BTN_Y] + button23[BTN_HEIGHT]):
-            button23[BTN_IS_CLICKED] = True
-        if (x > button24[BTN_X] and x < button24[BTN_X] + button24[BTN_WIDTH] and
-                y > button24[BTN_Y] and y < button24[BTN_Y] + button24[BTN_HEIGHT]):
-            button24[BTN_IS_CLICKED] = True
+
 
 def on_mouse_release(x, y, button, modifiers):
     global current_screen
@@ -538,23 +519,18 @@ def on_mouse_release(x, y, button, modifiers):
 
         button2[BTN_IS_CLICKED] = False
 
-        button3[BTN_IS_CLICKED] = False
 
-        button4[BTN_IS_CLICKED] = False
 
     if current_screen == "boss_two":
         button11[BTN_IS_CLICKED] = False
 
         button12[BTN_IS_CLICKED] = False
 
-        button13[BTN_IS_CLICKED] = False
 
-        button14[BTN_IS_CLICKED] = False
     if current_screen == "boss_three":
         button21[BTN_IS_CLICKED] = False
         button22[BTN_IS_CLICKED] = False
-        button23[BTN_IS_CLICKED] = False
-        button24[BTN_IS_CLICKED] = False
+
 
 def draw_button(button):
     if button[BTN_IS_CLICKED]:
@@ -761,28 +737,14 @@ def draw_boss_one():
     arcade.draw_xywh_rectangle_filled(button2[BTN_X], button2[BTN_Y], button2[BTN_WIDTH], button2[BTN_HEIGHT],
                                       color)
 
-    if button3[BTN_IS_CLICKED]:
-        color = button3[BTN_CLICKED_COLOR]
-    else:
-        color = button3[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button3[BTN_X], button3[BTN_Y], button3[BTN_WIDTH], button3[BTN_HEIGHT],
-                                      color)
 
-    if button4[BTN_IS_CLICKED]:
-        color = button4[BTN_CLICKED_COLOR]
-    else:
-        color = button4[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button4[BTN_X], button4[BTN_Y], button4[BTN_WIDTH], button4[BTN_HEIGHT],
-                                      color)
+
     button5[BTN_IS_CLICKED] = False
 
     button1[BTN_IS_CLICKED] = False
 
     button2[BTN_IS_CLICKED] = False
 
-    button3[BTN_IS_CLICKED] = False
-
-    button4[BTN_IS_CLICKED] = False
 
 
 def draw_boss_two():
@@ -829,26 +791,13 @@ def draw_boss_two():
     arcade.draw_xywh_rectangle_filled(button12[BTN_X], button12[BTN_Y], button12[BTN_WIDTH], button12[BTN_HEIGHT],
                                       color)
 
-    if button13[BTN_IS_CLICKED]:
-        color = button13[BTN_CLICKED_COLOR]
-    else:
-        color = button13[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button13[BTN_X], button13[BTN_Y], button13[BTN_WIDTH], button13[BTN_HEIGHT],
-                                      color)
 
-    if button14[BTN_IS_CLICKED]:
-        color = button14[BTN_CLICKED_COLOR]
-    else:
-        color = button14[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button14[BTN_X], button14[BTN_Y], button14[BTN_WIDTH], button14[BTN_HEIGHT],
-                                      color)
+
     button11[BTN_IS_CLICKED] = False
 
     button12[BTN_IS_CLICKED] = False
 
-    button13[BTN_IS_CLICKED] = False
 
-    button14[BTN_IS_CLICKED] = False
 
 def draw_boss_three():
     fight.draw()
@@ -910,22 +859,11 @@ def draw_boss_three():
         color = button22[BTN_COLOR]
     arcade.draw_xywh_rectangle_filled(button22[BTN_X], button22[BTN_Y], button22[BTN_WIDTH], button22[BTN_HEIGHT],
                                       color)
-    if button23[BTN_IS_CLICKED]:
-        color = button23[BTN_CLICKED_COLOR]
-    else:
-        color = button23[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button23[BTN_X], button23[BTN_Y], button23[BTN_WIDTH], button23[BTN_HEIGHT],
-                                      color)
-    if button24[BTN_IS_CLICKED]:
-        color = button24[BTN_CLICKED_COLOR]
-    else:
-        color = button24[BTN_COLOR]
-    arcade.draw_xywh_rectangle_filled(button24[BTN_X], button24[BTN_Y], button24[BTN_WIDTH], button24[BTN_HEIGHT],
-                                      color)
+
+
     button21[BTN_IS_CLICKED] = False
     button22[BTN_IS_CLICKED] = False
-    button23[BTN_IS_CLICKED] = False
-    button24[BTN_IS_CLICKED] = False
+
 
 if __name__ == '__main__':
     setup()
