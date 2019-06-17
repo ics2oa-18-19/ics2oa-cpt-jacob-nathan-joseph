@@ -33,59 +33,92 @@ start_x = 300
 
 button5 = [204, 130, 200, 50, False, arcade.color.ANTI_FLASH_WHITE, arcade.color.ANTI_FLASH_WHITE]
 
-herobrine_move = random.randint(1,3)
+herobrine_move = random.randint(1, 3)
 herobrine_health = 150
 
-mine = arcade.Sprite('mine.png', center_x = 40, center_y = random.randint(265,450), scale=0.065)
-mine_2 = arcade.Sprite('mine.png', center_x = 600, center_y = random.randint(265,450), scale=0.065)
+mine = arcade.Sprite('mine.png', center_x=40, center_y=random.randint(265, 450), scale=0.065)
+mine_2 = arcade.Sprite('mine.png', center_x=600, center_y=random.randint(265, 450), scale=0.065)
 mine.change_x = 10
 mine_2.change_x = -10
 mine.change_angle = 10
 mine_2.change_angle = 10
 
-
-smite = arcade.Sprite('smite.png', center_x = random.randint(1,640)
-, center_y = HEIGHT + 300, scale=0.35)
+smite = arcade.Sprite('smite.png', center_x=random.randint(1, 640)
+                      , center_y=HEIGHT + 300, scale=0.35)
 smite.change_y = -10
 
-
-bolt = arcade.Sprite('bolt.png', center_x= random.randint(1,640)
-, center_y =HEIGHT, scale=0.08)
-bolt_2 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-bolt_3 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-bolt_4 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
-bolt_5 = arcade.Sprite('bolt.png',center_x= random.randint(1,640)
-, center_y = HEIGHT, scale= 0.08)
+bolt = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                     , center_y=HEIGHT, scale=0.08)
+bolt_2 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
+bolt_3 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
+bolt_4 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
+bolt_5 = arcade.Sprite('bolt.png', center_x=random.randint(1, 640)
+                       , center_y=HEIGHT, scale=0.08)
 bolt.change_y = -10
 bolt_2.change_y = -10
 bolt_3.change_y = -10
 bolt_4.change_y = -10
 bolt_5.change_y = -10
 
-ricardo_move = random.randint(1,3)
+ricardo_move = random.randint(1, 3)
 ricardo_health = 150
 
-flex = arcade.Sprite('ricardo_flex.png', center_x = 40, center_y = random.randint(265,450), scale=0.5)
-flex_2 = arcade.Sprite('ricardo_flex.png', center_x = 600, center_y = random.randint(265,450), scale=0.5)
+flex = arcade.Sprite('ricardo_flex.png', center_x=40, center_y=random.randint(265, 450), scale=0.5)
+flex_2 = arcade.Sprite('ricardo_flex.png', center_x=600, center_y=random.randint(265, 450), scale=0.5)
 flex.change_x = 10
 flex_2.change_x = -10
 flex.change_angle = 10
 flex_2.change_angle = 10
 
-
-charm = arcade.Sprite('ricardo_charm.png', center_x = random.randint(1,640)
-, center_y = HEIGHT + 300, scale=0.13)
+charm = arcade.Sprite('ricardo_charm.png', center_x=random.randint(1, 640)
+                      , center_y=HEIGHT + 300, scale=0.13)
 charm.change_y = -10
 
-
-
-milos = arcade.Sprite('ricardo_ricardo.png', center_x= random.randint(1,640)
-, center_y =HEIGHT, scale=0.1)
+milos = arcade.Sprite('ricardo_ricardo.png', center_x=random.randint(1, 640)
+                      , center_y=HEIGHT, scale=0.1)
 
 milos.change_y = -10
+
+sans_move = random.randint(1,3)
+sans_health = 150
+
+cock = arcade.Sprite('sans_cock.png', center_x = 40, center_y = random.randint(265,450), scale=0.12)
+cock_2 = arcade.Sprite('sans_cock.png', center_x = 600, center_y = random.randint(265,450), scale=0.12)
+cock.change_x = 3
+cock_2.change_x = -3
+cock.change_angle = 10
+cock_2.change_angle = 10
+cock_pos_1 = random.randint(265,450)
+cock_pos_2 = random.randint(265,450)
+
+
+bone = arcade.Sprite('sans_bone.png', center_x = random.randint(1,640)
+, center_y = HEIGHT + 300, scale=0.35)
+bone_2 = arcade.Sprite('sans_bone2.png', center_x = 700
+, center_y = random.randint(100,640), scale=0.35)
+bone.change_y = -5
+bone_2.change_x = -5
+
+
+emerald = arcade.Sprite('sans_master_emerald.png', center_x= random.randint(1,640)
+, center_y =HEIGHT, scale=0.08)
+emerald_2 = arcade.Sprite('sans_red_emerald.png',center_x= random.randint(1,640)
+, center_y = HEIGHT + 70, scale= 0.08)
+emerald_3 = arcade.Sprite('sans_blue_emerald.png',center_x= random.randint(1,640)
+, center_y = HEIGHT + 140, scale= 0.08)
+emerald_4 = arcade.Sprite('sans_white_emerald.png',center_x= random.randint(1,640)
+, center_y = HEIGHT + 210, scale= 0.08)
+emerald_5 = arcade.Sprite('sans_yellow_emerald.png',center_x= random.randint(1,640)
+, center_y = HEIGHT + 280, scale= 0.08)
+emerald.change_y = -6
+emerald_2.change_y = -6
+emerald_3.change_y = -6
+emerald_4.change_y = -6
+emerald_5.change_y = -6
+turn = random.randint(1, 2)
 
 button1 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button2 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
@@ -97,14 +130,19 @@ button12 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button13 = [353, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 button14 = [518, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
 
+button21 = [22, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
+button22 = [184, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
+button23 = [353, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
+button24 = [518, 2, 115, 40, False, (0, 0, 0, 0), arcade.color.GREEN]
+
 health = 120
 
-fight = arcade.Sprite('fight.png', center_x=WIDTH/2, center_y=HEIGHT/2, scale=1)
+fight = arcade.Sprite('fight.png', center_x=WIDTH / 2, center_y=HEIGHT / 2, scale=1)
 
 n = 1
 
 def update(delta_time):
-    global current_screen, up_pressed, player_y, herobrine_health, health, ricardo_health
+    global current_screen, up_pressed, player_y, herobrine_health, health, ricardo_health, sans_health
 
     if current_screen == "movement" or "movement2" or "movement3":
         if up_pressed == True:
@@ -124,26 +162,30 @@ def update(delta_time):
         if player.center_y < 20:
             player.center_y += 5
 
-
     if current_screen == "movement":
-        if player.center_x > 600 and player.center_y > 400:
-            current_screen = "boss_one"
-        health = 120
-
-    if current_screen == "movement2":
         if player.center_x > 600 and player.center_y > 400:
             current_screen = "boss_two"
         health = 120
 
+    if current_screen == "movement2":
+        if player.center_x > 600 and player.center_y > 400:
+            current_screen = "boss_one"
+        health = 120
+
+    if current_screen == "movement3":
+        if player.center_x > 600 and player.center_y > 400:
+            current_screen = "boss_three"
+        health = 120
+
     if current_screen == "boss_one":
         if up_pressed == True:
-            player.center_y += 7
+            player.center_y += 9
         if down_pressed == True:
-            player.center_y -= 7
+            player.center_y -= 9
         if left_pressed == True:
-            player.center_x -= 7
+            player.center_x -= 9
         if right_pressed == True:
-            player.center_x += 7
+            player.center_x += 9
         if player.center_x > 640:
             player.center_x -= 20
         if player.center_x < 20:
@@ -154,7 +196,7 @@ def update(delta_time):
             player.center_y += 20
 
         if button1[BTN_IS_CLICKED]:
-            herobrine_health -= 2.5
+            herobrine_health -= 1
 
         if button2[BTN_IS_CLICKED]:
             health += 0.7
@@ -201,20 +243,20 @@ def update(delta_time):
             health -= 2
             break
 
-        if health < 0:
-            current_screen = "death"
+        #if health < 0:
+            #current_screen = "death"
         if herobrine_health < 0:
-            current_screen = "movement2"
+            current_screen = "movement3"
 
     if current_screen == "boss_two":
         if up_pressed == True:
-            player.center_y += 7
+            player.center_y += 9
         if down_pressed == True:
-            player.center_y -= 7
+            player.center_y -= 9
         if left_pressed == True:
-            player.center_x -= 7
+            player.center_x -= 9
         if right_pressed == True:
-            player.center_x += 7
+            player.center_x += 9
         if player.center_x > 640:
             player.center_x -= 20
         if player.center_x < 20:
@@ -225,7 +267,7 @@ def update(delta_time):
             player.center_y += 20
 
         if button11[BTN_IS_CLICKED]:
-            ricardo_health -= 2.5
+            ricardo_health -= 1
 
         if button12[BTN_IS_CLICKED]:
             health += 0.7
@@ -252,10 +294,87 @@ def update(delta_time):
         while hit == True:
             health -= 2
             break
-        if health < 0:
-            current_screen = "death"
-        elif ricardo_health < 0:
-            current_screen = "movement3"
+        #if health < 0:
+            #current_screen = "death"
+        if ricardo_health < 0:
+            current_screen = "movement2"
+
+    if current_screen == "boss_three":
+        if up_pressed == True:
+            player.center_y += 9
+        if down_pressed == True:
+            player.center_y -= 9
+        if left_pressed == True:
+            player.center_x -= 9
+        if right_pressed == True:
+            player.center_x += 9
+        if player.center_x > 640:
+            player.center_x -= 20
+        if player.center_x < 20:
+            player.center_x += 20
+        if player.center_y > 450:
+            player.center_y -= 20
+        if player.center_y < 100:
+            player.center_y += 20
+        if player.center_y < 150:
+            player.center_y += 20
+
+        if button21[BTN_IS_CLICKED]:
+            sans_health -= 1
+
+        if button22[BTN_IS_CLICKED]:
+            health += 0.5
+
+        cock.update()
+
+        cock_hit = arcade.check_for_collision(player, cock)
+        while cock_hit == True:
+            health -= 2
+            break
+        cock_2.update()
+        cock_hit_2 = arcade.check_for_collision(player, cock_2)
+        while cock_hit_2 == True:
+            health -= 2
+            health -= 2
+            break
+        bone.update()
+        bone_hit = arcade.check_for_collision(player, bone)
+        while bone_hit == True:
+            health -= 1
+            break
+        bone_2.update()
+        bone_hit_2 = arcade.check_for_collision(player, bone_2)
+        while bone_hit_2 == True:
+            health -= 1
+            break
+        emerald.update()
+        hit = arcade.check_for_collision(player, emerald)
+        while hit == True:
+            health -= 2
+            break
+        emerald_2.update()
+        hit_2 = arcade.check_for_collision(player, emerald_2)
+        while hit_2 == True:
+            health -= 2
+            break
+        emerald_3.update()
+        hit_3 = arcade.check_for_collision(player, emerald_3)
+        while hit_3 == True:
+            health -= 2
+            break
+        emerald_4.update()
+        hit_4 = arcade.check_for_collision(player, emerald_4)
+        while hit_4 == True:
+            break
+        emerald_5.update()
+        hit_5 = arcade.check_for_collision(player, emerald_5)
+        while hit_5 == True:
+            health -= 2
+            break
+        #if health < 0:
+            #current_screen = "death_screen"
+        if sans_health < 0:
+            current_screen = "final"
 
 def on_draw():
     arcade.start_render()
@@ -278,6 +397,10 @@ def on_draw():
         draw_boss_one()
     elif current_screen == "boss_two":
         draw_boss_two()
+    elif current_screen == "boss_three":
+        draw_boss_three()
+
+
 def on_key_press(key, modifiers):
     global current_screen, up_pressed, down_pressed, right_pressed, left_pressed
 
@@ -324,6 +447,7 @@ def on_key_press(key, modifiers):
 
         if key == arcade.key.A:
             left_pressed = True
+
 
 def on_key_release(key, modifiers):
     global current_screen, up_pressed, down_pressed, left_pressed, right_pressed
@@ -388,6 +512,21 @@ def on_mouse_press(x, y, button, modifiers):
         if (x > button14[BTN_X] and x < button14[BTN_X] + button14[BTN_WIDTH] and
                 y > button14[BTN_Y] and y < button14[BTN_Y] + button14[BTN_HEIGHT]):
             button14[BTN_IS_CLICKED] = True
+    if current_screen == "boss_three":
+
+        if (x > button21[BTN_X] and x < button21[BTN_X] + button21[BTN_WIDTH] and
+                y > button21[BTN_Y] and y < button21[BTN_Y] + button21[BTN_HEIGHT]):
+            button21[BTN_IS_CLICKED] = True
+        if (x > button22[BTN_X] and x < button22[BTN_X] + button22[BTN_WIDTH] and
+                y > button22[BTN_Y] and y < button22[BTN_Y] + button22[BTN_HEIGHT]):
+            button22[BTN_IS_CLICKED] = True
+        if (x > button23[BTN_X] and x < button23[BTN_X] + button23[BTN_WIDTH] and
+                y > button23[BTN_Y] and y < button23[BTN_Y] + button23[BTN_HEIGHT]):
+            button23[BTN_IS_CLICKED] = True
+        if (x > button24[BTN_X] and x < button24[BTN_X] + button24[BTN_WIDTH] and
+                y > button24[BTN_Y] and y < button24[BTN_Y] + button24[BTN_HEIGHT]):
+            button24[BTN_IS_CLICKED] = True
+
 def on_mouse_release(x, y, button, modifiers):
     global current_screen
 
@@ -411,6 +550,12 @@ def on_mouse_release(x, y, button, modifiers):
         button13[BTN_IS_CLICKED] = False
 
         button14[BTN_IS_CLICKED] = False
+    if current_screen == "boss_three":
+        button21[BTN_IS_CLICKED] = False
+        button22[BTN_IS_CLICKED] = False
+        button23[BTN_IS_CLICKED] = False
+        button24[BTN_IS_CLICKED] = False
+
 def draw_button(button):
     if button[BTN_IS_CLICKED]:
         color = button[BTN_CLICKED_COLOR]
@@ -473,7 +618,8 @@ def draw_instructions():
         300, arcade.color.BLACK, 10, width=800,
         align="center",
         anchor_x="center", anchor_y="center")
-    arcade.draw_text("You will have 100 health each fight. You can dodge to avoid damage", start_x, 250, arcade.color.BLACK, 10,
+    arcade.draw_text("You will have 100 health each fight. You can dodge to avoid damage", start_x, 250,
+                     arcade.color.BLACK, 10,
                      width=800,
                      align="center",
                      anchor_x="center", anchor_y="center")
@@ -508,6 +654,7 @@ def draw_movement():
                      align="center",
                      anchor_x="center", anchor_y="center")
 
+
 def draw_movement2():
     arcade.set_background_color(arcade.color.DARTMOUTH_GREEN)
     arcade.draw_rectangle_filled(10, 10, 200, 200, arcade.color.HELIOTROPE_GRAY)
@@ -523,6 +670,7 @@ def draw_movement2():
                      align="center",
                      anchor_x="center", anchor_y="center")
 
+
 def draw_movement3():
     arcade.set_background_color(arcade.color.DARTMOUTH_GREEN)
     arcade.draw_rectangle_filled(10, 10, 200, 200, arcade.color.HELIOTROPE_GRAY)
@@ -537,6 +685,7 @@ def draw_movement3():
     arcade.draw_text("Walk to the end of the path", 560, 10, arcade.color.BLACK, 10, width=300,
                      align="center",
                      anchor_x="center", anchor_y="center")
+
 
 def draw_death():
     you_died.draw()
@@ -700,7 +849,83 @@ def draw_boss_two():
     button13[BTN_IS_CLICKED] = False
 
     button14[BTN_IS_CLICKED] = False
-#def draw_boss_three():
+
+def draw_boss_three():
+    fight.draw()
+    player.draw()
+    cock.draw()
+    cock_2.draw()
+    bone.draw()
+    bone_2.draw()
+    emerald.draw()
+    emerald_2.draw()
+    emerald_3.draw()
+    emerald_4.draw()
+    emerald_5.draw()
+    if cock.center_x == 600:
+        cock.change_x = -10
+        cock.center_y = random.randint(100,450)
+    elif cock.center_x == 40:
+        cock.change_x = 10
+        cock.center_y = random.randint(100, 450)
+    if cock_2.center_x == 40:
+        cock_2.change_x = 10
+        cock_2.center_y = random.randint(100, 450)
+    elif cock_2.center_x == 600:
+        cock_2.change_x = -10
+        cock_2.center_y = random.randint(100, 450)
+    if bone.center_y == -20:
+        bone.center_y += HEIGHT
+        bone.center_x = random.randint(1,640)
+    if bone_2.center_x == -20:
+        bone_2.center_x += WIDTH
+        bone_2.center_y = random.randint(1,640)
+    if emerald.center_y == 100:
+        emerald.center_y += HEIGHT
+        emerald.center_x = random.randint(1,640)
+    if emerald_2.center_y == 100:
+        emerald_2.center_y += HEIGHT
+        emerald_2.center_x = random.randint(1,640)
+    if emerald_3.center_y == 100:
+        emerald_3.center_y += HEIGHT
+        emerald_3.center_x = random.randint(1,640)
+    if emerald_4.center_y == 100:
+        emerald_4.center_y += HEIGHT
+        emerald_4.center_x = random.randint(1,640)
+    if emerald_5.center_y == 100:
+        emerald_5.center_y += HEIGHT
+        emerald_5.center_x = random.randint(1,640)
+
+    arcade.draw_xywh_rectangle_filled(220, 50, health * 2, 20, arcade.color.GREEN)
+    arcade.draw_xywh_rectangle_filled(160, 90, sans_health * 2, 20, arcade.color.RED)
+    if button21[BTN_IS_CLICKED]:
+        color = button21[BTN_CLICKED_COLOR]
+    else:
+        color = button21[BTN_COLOR]
+    arcade.draw_xywh_rectangle_filled(button21[BTN_X], button21[BTN_Y], button21[BTN_WIDTH], button21[BTN_HEIGHT],
+                                      color)
+    if button22[BTN_IS_CLICKED]:
+        color = button22[BTN_CLICKED_COLOR]
+    else:
+        color = button22[BTN_COLOR]
+    arcade.draw_xywh_rectangle_filled(button22[BTN_X], button22[BTN_Y], button22[BTN_WIDTH], button22[BTN_HEIGHT],
+                                      color)
+    if button23[BTN_IS_CLICKED]:
+        color = button23[BTN_CLICKED_COLOR]
+    else:
+        color = button23[BTN_COLOR]
+    arcade.draw_xywh_rectangle_filled(button23[BTN_X], button23[BTN_Y], button23[BTN_WIDTH], button23[BTN_HEIGHT],
+                                      color)
+    if button24[BTN_IS_CLICKED]:
+        color = button24[BTN_CLICKED_COLOR]
+    else:
+        color = button24[BTN_COLOR]
+    arcade.draw_xywh_rectangle_filled(button24[BTN_X], button24[BTN_Y], button24[BTN_WIDTH], button24[BTN_HEIGHT],
+                                      color)
+    button21[BTN_IS_CLICKED] = False
+    button22[BTN_IS_CLICKED] = False
+    button23[BTN_IS_CLICKED] = False
+    button24[BTN_IS_CLICKED] = False
 
 if __name__ == '__main__':
     setup()
