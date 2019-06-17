@@ -1,0 +1,8 @@
+  if player.center_x > 660:
+        player.center_x -= 5
+    if player.center_x < 20:
+        player.center_x += 5
+    if player.center_y > 415:
+        player.center_y -= 5
+    if player.center_y < 20:
+        player.center_y += 5
